@@ -7,7 +7,7 @@ package sistemarestaurante;
 
 /**
  *
- * @author Usuï¿½rio
+ * @author Usuário
  */
 public class Funcionario {
 

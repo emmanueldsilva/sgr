@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Usuï¿½rio
+ * @author Usuário
  */
 public class ControleTabelaDePrecos {
 
@@ -31,7 +31,7 @@ public class ControleTabelaDePrecos {
             {
                 System.out.println(menuTabelaDePrecos.getTabelaPrecos().getValueAt(i, 1).toString());
                 if (menuTabelaDePrecos.getTabelaPrecos().getValueAt(i, 1).toString().equals("")){
-                    JOptionPane.showMessageDialog(null, "Erro! Vocï¿½ nï¿½o digitou os preï¿½os em todas as linhas da tabela!",
+                    JOptionPane.showMessageDialog(null, "Erro! Você não digitou os preços em todas as linhas da tabela!",
                         "Erro!", JOptionPane.ERROR_MESSAGE);
                         break;
                 }
@@ -50,7 +50,7 @@ public class ControleTabelaDePrecos {
 
                 TabelaDePrecos tabela = new TabelaDePrecos(precos);
                 sgbd.armazenaPrecos(tabela);
-                    JOptionPane.showMessageDialog(null, "Tabela de Preï¿½os atualizada com Sucesso!", 
+                    JOptionPane.showMessageDialog(null, "Tabela de Preços atualizada com Sucesso!", 
         "Confirmado", JOptionPane.INFORMATION_MESSAGE);
             }
         }

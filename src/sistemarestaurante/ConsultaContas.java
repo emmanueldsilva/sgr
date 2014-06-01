@@ -8,7 +8,7 @@ package sistemarestaurante;
 
 /**
  *
- * @author  Usuï¿½rio
+ * @author  Usuário
  */
 public class ConsultaContas extends javax.swing.JFrame {
 
@@ -54,15 +54,15 @@ public class ConsultaContas extends javax.swing.JFrame {
         pesquisaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 1, true), "Pesquisa"));
         pesquisaPanel.setOpaque(false);
 
-        pesquisarLabel.setText("Pesquisar pela Data e Horï¿½rio em que a Conta foi efetuada:");
+        pesquisarLabel.setText("Pesquisar pela Data e Horário em que a Conta foi efetuada:");
 
         dataLabel.setText("Data (Ex: 01/01/2000):");
 
         dataFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
 
-        horarioAtendimentoLabel.setText("Horï¿½rio de Atendimento: ");
+        horarioAtendimentoLabel.setText("Horário de Atendimento: ");
 
-        horarioAtendimentoComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Almoï¿½o", "Janta" }));
+        horarioAtendimentoComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Almoço", "Janta" }));
         horarioAtendimentoComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 horarioAtendimentoComboBoxActionPerformed(evt);
@@ -617,7 +617,7 @@ public class ConsultaContas extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Nï¿½mero da Conta", "Horï¿½rio de Fechamento", "Nï¿½mero de Pessoas", "Horï¿½rio de Atendimento"
+                "Número da Conta", "Horário de Fechamento", "Número de Pessoas", "Horário de Atendimento"
             }
         ) {
             Class[] types = new Class [] {

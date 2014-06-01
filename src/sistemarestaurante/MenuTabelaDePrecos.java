@@ -1,5 +1,5 @@
 /*
- * TabelaDePreï¿½os.java
+ * TabelaDePreços.java
  *
  * Created on 15 de Setembro de 2008, 23:29
  */
@@ -11,13 +11,13 @@ import javax.swing.JTable;
 
 /**
  *
- * @author  Usuï¿½rio
+ * @author  Usuário
  */
 public class MenuTabelaDePrecos extends javax.swing.JFrame {
 
     private ControleTabelaDePrecos controleTabelaDePrecos;
     private static MenuTabelaDePrecos menuTabela = null;
-    /** Creates new form TabelaDePreï¿½os */
+    /** Creates new form TabelaDePreços */
     private MenuTabelaDePrecos() {
         
         initComponents();
@@ -44,7 +44,7 @@ public class MenuTabelaDePrecos extends javax.swing.JFrame {
         okButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("SGR - Tabela de Preï¿½os");
+        setTitle("SGR - Tabela de Preços");
         setResizable(false);
 
         painelTabelaDePrecosPanel.setBackground(new java.awt.Color(0, 51, 51));
@@ -53,9 +53,9 @@ public class MenuTabelaDePrecos extends javax.swing.JFrame {
         tabelaDePrecosLabel.setFont(new java.awt.Font("Tahoma", 1, 18));
         tabelaDePrecosLabel.setForeground(new java.awt.Color(255, 255, 255));
         tabelaDePrecosLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tabelaDePrecosLabel.setText("Tabela de Preï¿½os");
+        tabelaDePrecosLabel.setText("Tabela de Preços");
 
-        produtosPrecosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 153, 0), 1, true), "Produtos e Preï¿½os", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(51, 153, 0))); // NOI18N
+        produtosPrecosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 153, 0), 1, true), "Produtos e Preços", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(51, 153, 0))); // NOI18N
         produtosPrecosPanel.setOpaque(false);
 
         tabelaDePrecosTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -66,21 +66,21 @@ public class MenuTabelaDePrecos extends javax.swing.JFrame {
                 {"Marmitex", "6.50"},
                 {"Sopa (mesa)", "9.00"},
                 {"Cerveja Garrafa", "4.00"},
-                {"ï¿½ Cerveja ", "2.50"},
+                {"½ Cerveja ", "2.50"},
                 {"Cerveja Lata 350ml", "2.50"},
                 {"Refrigerante Garrafa 290ml", "2.00"},
                 {"Refrigerante Lata 350ml", "2.50"},
                 {"Refrigerante 600ml", "3.00"},
                 {"Refrigerante Litro", "3.00"},
                 {"Refrigerante 2 Litros", "4.00"},
-                {"ï¿½gua", "2.00"},
+                {"Água", "2.00"},
                 {"Suco", "2.00"},
                 {"Aperitivo", "3.00"},
-                {"Vinho (taï¿½a)", "3.00"},
+                {"Vinho (taça)", "3.00"},
                 {"Vinho (jarra)", "8.00"}
             },
             new String [] {
-                "Nome do Produto", "Preï¿½o"
+                "Nome do Produto", "Preço"
             }
         ) {
             boolean[] canEdit = new boolean [] {

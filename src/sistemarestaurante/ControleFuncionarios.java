@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Usuï¿½rio
+ * @author Usuário
  */
 public class ControleFuncionarios {
 
@@ -30,42 +30,42 @@ public class ControleFuncionarios {
     {
         if (menuFuncionario.getNome().equals(""))
         {
-            JOptionPane.showMessageDialog(null, "Erro! Vocï¿½ nï¿½o digitou o Nome do funcionï¿½rio!", 
+            JOptionPane.showMessageDialog(null, "Erro! Você não digitou o Nome do funcionário!", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         }
         else if (menuFuncionario.getEndereco().equals(""))
         {
-            JOptionPane.showMessageDialog(null, "Erro! Vocï¿½ nï¿½o digitou o Endereï¿½o do funcionï¿½rio!", 
+            JOptionPane.showMessageDialog(null, "Erro! Você não digitou o Endereço do funcionário!", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         }
         else if (menuFuncionario.getRg().equals(""))
         {
-            JOptionPane.showMessageDialog(null, "Erro! Vocï¿½ nï¿½o digitou o RG do funcionï¿½rio!", 
+            JOptionPane.showMessageDialog(null, "Erro! Você não digitou o RG do funcionário!", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         }
         else if (menuFuncionario.getCpf().equals("   .   .   -  "))
         {
-            JOptionPane.showMessageDialog(null, "Erro! Vocï¿½ nï¿½o digitou o CPF do funcionï¿½rio!", 
+            JOptionPane.showMessageDialog(null, "Erro! Você não digitou o CPF do funcionário!", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         }
         else if (menuFuncionario.getEstadoCivil().equals(""))
         {
-            JOptionPane.showMessageDialog(null, "Erro! Vocï¿½ nï¿½o selecionou o Estado Civil do funcionï¿½rio!",
+            JOptionPane.showMessageDialog(null, "Erro! Você não selecionou o Estado Civil do funcionário!",
                     "Erro!", JOptionPane.ERROR_MESSAGE);            
         }
         else if (menuFuncionario.getTelefone().equals("(  )    -    "))
         {
-            JOptionPane.showMessageDialog(null, "Erro! Vocï¿½ nï¿½o digitou o Telefone do funcionï¿½rio!",
+            JOptionPane.showMessageDialog(null, "Erro! Você não digitou o Telefone do funcionário!",
                     "Erro!", JOptionPane.ERROR_MESSAGE);            
         }
         else if (menuFuncionario.getCargo().equals(""))
         {
-            JOptionPane.showMessageDialog(null, "Erro! Vocï¿½ nï¿½o selecionou o Cargo do funcionï¿½rio",
+            JOptionPane.showMessageDialog(null, "Erro! Você não selecionou o Cargo do funcionário",
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         }
         else if (menuFuncionario.getSalario().equals(""))
         {
-            JOptionPane.showMessageDialog(null, "Erro! Vocï¿½ nï¿½o digitou o Salï¿½rio do funcionï¿½rio",
+            JOptionPane.showMessageDialog(null, "Erro! Você não digitou o Salário do funcionário",
                     "Erro!", JOptionPane.ERROR_MESSAGE);            
         }
         else
@@ -80,7 +80,7 @@ public class ControleFuncionarios {
                     menuFuncionario.getSalario());
             
             sgbd.armazenaFuncionario(funcionario);
-            JOptionPane.showMessageDialog(null, "Funcionï¿½rio Cadastrado com Sucesso!",
+            JOptionPane.showMessageDialog(null, "Funcionário Cadastrado com Sucesso!",
                     "Confirmado", JOptionPane.INFORMATION_MESSAGE);
             listaFuncionariosNaTela();
             limpaCamposFuncionario();
@@ -95,7 +95,7 @@ public class ControleFuncionarios {
                 null, null, null, null, null, null)))
         {
             listaFuncionarios.addElement(fun.getNome() + "    " + fun.getTelefone() +
-                    "    " + fun.getCargo() + "    " + "Salï¿½rio:" + "    " +
+                    "    " + fun.getCargo() + "    " + "Salário:" + "    " +
                     fun.getSalario());
         }
         menuFuncionario.setListaFuncionariosCadastrados(listaFuncionarios);
@@ -112,7 +112,7 @@ public class ControleFuncionarios {
                 telefoneF, cargoF, salarioF));
         
         listaFuncionariosNaTela();
-        JOptionPane.showMessageDialog(null, "Funcionï¿½rio Removido com Sucesso.",
+        JOptionPane.showMessageDialog(null, "Funcionário Removido com Sucesso.",
                 "Confirmado!", JOptionPane.INFORMATION_MESSAGE);
     }
 

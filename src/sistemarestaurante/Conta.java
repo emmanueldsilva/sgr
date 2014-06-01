@@ -33,9 +33,9 @@ public class Conta {
         this.date = new Date();
         this.sdf = new SimpleDateFormat("dd/MM/yyyy");
         this.data = sdf.format(date);
-        this.produtosConsumidos.add("Data:"+ "    " + this.data + "    " + "Horï¿½rio Ocupaï¿½ï¿½o:"
-                + "    " + this.horarioOcupacao + "    " + "Horï¿½rio Fechamento:" + "    "
-                + this.horarioSaida + "    " + "Nï¿½ Pessoas:" + "    " + this.numOcupantes);
+        this.produtosConsumidos.add("Data:"+ "    " + this.data + "    " + "Horário Ocupação:"
+                + "    " + this.horarioOcupacao + "    " + "Horário Fechamento:" + "    "
+                + this.horarioSaida + "    " + "N° Pessoas:" + "    " + this.numOcupantes);
     }
 
     public ArrayList<String> getProdutosConsumidos() {

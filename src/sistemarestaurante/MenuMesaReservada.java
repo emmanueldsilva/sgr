@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import javax.swing.JComboBox;
 /**
  *
- * @author  Usuï¿½rio
+ * @author  Usuário
  */
 public class MenuMesaReservada extends javax.swing.JFrame {
 
@@ -80,10 +80,10 @@ public class MenuMesaReservada extends javax.swing.JFrame {
         mesaReservadaLabel.setFont(new java.awt.Font("Tahoma", 1, 14));
         mesaReservadaLabel.setForeground(new java.awt.Color(255, 255, 0));
         mesaReservadaLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mesaReservadaLabel.setText("A Mesa estï¿½ Reservada");
+        mesaReservadaLabel.setText("A Mesa está Reservada");
 
         numeroMesaLabel.setForeground(new java.awt.Color(255, 255, 255));
-        numeroMesaLabel.setText("Nï¿½mero da Mesa:");
+        numeroMesaLabel.setText("Número da Mesa:");
 
         numeroMesaTextField.setColumns(3);
         numeroMesaTextField.setEditable(false);
@@ -93,10 +93,10 @@ public class MenuMesaReservada extends javax.swing.JFrame {
         nomeClienteLabel.setText("Nome do Cliente da Reserva:");
 
         horarioReservaLabel.setForeground(new java.awt.Color(255, 255, 255));
-        horarioReservaLabel.setText("Horï¿½rio da Reserva:");
+        horarioReservaLabel.setText("Horário da Reserva:");
 
         numeroPessoasLabel.setForeground(new java.awt.Color(255, 255, 255));
-        numeroPessoasLabel.setText("Nï¿½mero de Pessoas:");
+        numeroPessoasLabel.setText("Número de Pessoas:");
 
         numeroPessoasTextField.setEditable(false);
         numeroPessoasTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);

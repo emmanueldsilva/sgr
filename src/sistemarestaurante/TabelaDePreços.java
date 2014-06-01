@@ -1,5 +1,5 @@
 /*
- * TabelaDePreï¿½os.java
+ * TabelaDePreços.java
  *
  * Created on 15 de Setembro de 2008, 23:29
  */
@@ -8,12 +8,12 @@ package sistemarestaurante;
 
 /**
  *
- * @author  Usuï¿½rio
+ * @author  Usuário
  */
-public class TabelaDePreÃ§os extends javax.swing.JFrame {
+public class TabelaDePreços extends javax.swing.JFrame {
 
-    /** Creates new form TabelaDePreï¿½os */
-    public TabelaDePreÃ§os() {
+    /** Creates new form TabelaDePreços */
+    public TabelaDePreços() {
         initComponents();
     }
 
@@ -36,7 +36,7 @@ public class TabelaDePreÃ§os extends javax.swing.JFrame {
         okButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("SGR - Tabela de Preï¿½os");
+        setTitle("SGR - Tabela de Preços");
         setResizable(false);
 
         painelTabelaDePrecosPanel.setBackground(new java.awt.Color(204, 204, 255));
@@ -44,9 +44,9 @@ public class TabelaDePreÃ§os extends javax.swing.JFrame {
 
         tabelaDePrecosLabel.setFont(new java.awt.Font("Tahoma", 1, 18));
         tabelaDePrecosLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tabelaDePrecosLabel.setText("Tabela de Preï¿½os");
+        tabelaDePrecosLabel.setText("Tabela de Preços");
 
-        produtosPrecosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 51, 255), 1, true), "Produtos e Preï¿½os"));
+        produtosPrecosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 51, 255), 1, true), "Produtos e Preços"));
         produtosPrecosPanel.setOpaque(false);
 
         tabelaDePrecosTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -57,29 +57,28 @@ public class TabelaDePreÃ§os extends javax.swing.JFrame {
                 {"Marmitex", "6.50"},
                 {"Sopa (mesa)", "9.00"},
                 {"Cerveja Garrafa", "4.00"},
-                {"ï¿½ Cerveja ", "2.50"},
+                {"½ Cerveja ", "2.50"},
                 {"Cerveja Lata 350ml", "2.50"},
                 {"Refrigerante Garrafa 290ml", "2.00"},
                 {"Refrigerante Lata 350ml", "2.50"},
                 {"Refrigerante 600ml", "3.00"},
                 {"Refrigerante Litro", "3.00"},
                 {"Refrigerante 2 Litros", "4.00"},
-                {"ï¿½gua", "2.00"},
+                {"Água", "2.00"},
                 {"Suco", "2.00"},
                 {"Aperitivo", "3.00"},
-                {"Vinho (taï¿½a)", "3.00"},
+                {"Vinho (taça)", "3.00"},
                 {"Vinho (jarra)", "8.00"}
             },
             new String [] {
-                "Nome do Produto", "Preï¿½o"
+                "Nome do Produto", "Preço"
             }
         ) {
             boolean[] canEdit = new boolean [] {
                 false, true
             };
 
-            @Override
-			public boolean isCellEditable(int rowIndex, int columnIndex) {
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
@@ -110,8 +109,7 @@ public class TabelaDePreÃ§os extends javax.swing.JFrame {
 
         okButton.setText("OK");
         okButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okButtonActionPerformed(evt);
             }
         });
@@ -171,9 +169,8 @@ private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-			public void run() {
-                new TabelaDePreÃ§os().setVisible(true);
+            public void run() {
+                new TabelaDePreços().setVisible(true);
             }
         });
     }

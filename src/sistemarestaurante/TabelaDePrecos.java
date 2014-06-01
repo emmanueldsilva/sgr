@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Usuï¿½rio
+ * @author Usuário
  */
 public class TabelaDePrecos {
 

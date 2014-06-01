@@ -39,7 +39,7 @@ public class Ocupacao {
 
 
     /**
-     * Mï¿½todo responsï¿½vel por retornar o Horï¿½rio de Ocupaï¿½ï¿½o da Mesa.
+     * Método responsável por retornar o Horário de Ocupação da Mesa.
      * @return horarioOcupacao
      **/
     public String getHorarioOcupacao() {
@@ -54,7 +54,7 @@ public class Ocupacao {
 
 
     /**
-     * Mï¿½todo responsï¿½vel por modificar o Horï¿½rio de Ocupaï¿½ï¿½o da Mesa.
+     * Método responsável por modificar o Horário de Ocupação da Mesa.
      * @param horarioOcupacao
      */
     public void setHorarioOcupacao(String horarioOcupacao) {
@@ -63,7 +63,7 @@ public class Ocupacao {
 
 
     /**
-     * Mï¿½todo responsï¿½vel por retornar o Horï¿½rio de Saï¿½da da Mesa.
+     * Método responsável por retornar o Horário de Saída da Mesa.
      * @return horarioSaida
      */
     public String getHorarioSaida() {
@@ -72,7 +72,7 @@ public class Ocupacao {
 
 
     /**
-     * Mï¿½todo responsï¿½vel por modificar o Horï¿½rio de Saï¿½da da Mesa.
+     * Método responsável por modificar o Horário de Saída da Mesa.
      * @param horarioSaida
      */
     public void setHorarioSaida(String horarioSaida) {
@@ -81,7 +81,7 @@ public class Ocupacao {
 
     
     /**
-     * Mï¿½todo responsï¿½vel por retornar o Nï¿½mero de Ocupantes da Mesa.
+     * Método responsável por retornar o Número de Ocupantes da Mesa.
      * @return numeroOcupantes
      */
     public int getNumeroOcupantes() {
@@ -90,7 +90,7 @@ public class Ocupacao {
 
     
     /**
-     * Mï¿½todo responsï¿½vel por modificar o Nï¿½mero de Ocupantes da Mesa.
+     * Método responsável por modificar o Número de Ocupantes da Mesa.
      * @param numeroOcupantes
      */
     public void setNumeroOcupantes(int numeroOcupantes) {
@@ -99,7 +99,7 @@ public class Ocupacao {
 
 
     /**
-     * Mï¿½todo responsï¿½vel por adicionar uma mesa a ocupacao.
+     * Método responsável por adicionar uma mesa a ocupacao.
      * @param novamesa
      */
     public void addMesa(Mesa novamesa)
@@ -109,7 +109,7 @@ public class Ocupacao {
 
 
     /**
-     * Mï¿½todo responsï¿½vel por retornar o conjunto de mesas da ocupaï¿½ï¿½o.
+     * Método responsável por retornar o conjunto de mesas da ocupação.
      * @return mesas
      */
     public ArrayList<Mesa> getMesas()

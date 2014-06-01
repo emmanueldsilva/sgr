@@ -358,7 +358,7 @@ public class SGBD {
         }
         catch (Exception e)
         {
-            new Exception("erro ao remover um cadastro de funcionï¿½rio no banco de dados");
+            new Exception("erro ao remover um cadastro de funcionário no banco de dados");
         }
     }
     
@@ -375,7 +375,7 @@ public class SGBD {
         }
         catch (Exception e)
         {
-            new Exception("erro ao remover um cadastro de funcionï¿½rio no banco de dados");
+            new Exception("erro ao remover um cadastro de funcionário no banco de dados");
         }
     }
 
@@ -392,7 +392,7 @@ public class SGBD {
         }
         catch (Exception e)
         {
-            new Exception("erro ao remover um cadastro de funcionï¿½rio no banco de dados");
+            new Exception("erro ao remover um cadastro de funcionário no banco de dados");
         }
     }
     
@@ -471,7 +471,7 @@ public class SGBD {
         }
         catch (Exception e)
         {
-            new Exception("erro ao atualizar um cadastro de funcionï¿½rio no banco de dados");
+            new Exception("erro ao atualizar um cadastro de funcionário no banco de dados");
         }   
     }
 }

@@ -215,7 +215,7 @@ public class MenuConsultaConta extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (!contasCadastradasList.isSelectionEmpty())
         {
-            int option = JOptionPane.showConfirmDialog(null, "Aviso: Vocï¿½ estï¿½ prestes a remover um registro de Conta!" +
+            int option = JOptionPane.showConfirmDialog(null, "Aviso: Você está prestes a remover um registro de Conta!" +
                 " Deseja remover assim mesmo?", "Cuidado!", JOptionPane.YES_NO_OPTION,
                 JOptionPane.WARNING_MESSAGE);
             if (option == 0)

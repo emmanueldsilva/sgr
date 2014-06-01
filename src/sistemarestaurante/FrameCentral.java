@@ -8,7 +8,6 @@ package sistemarestaurante;
 
 //import javax.swing.*;
 import java.util.ArrayList;
-
 import javax.swing.DefaultListModel;
 
 
@@ -19,7 +18,7 @@ import javax.swing.DefaultListModel;
 public class FrameCentral extends javax.swing.JFrame{
     
     //Mesa mesa = new Mesa();
-    private final ArrayList<ControleMesa> conjuntoMesas = new ArrayList<ControleMesa>();
+    private ArrayList<ControleMesa> conjuntoMesas = new ArrayList<ControleMesa>();
     private static FrameCentral frame = null;
     private final int comprimento = 40, largura = 40;
     /** Creates new form frameCentral */
@@ -45,6 +44,8 @@ public class FrameCentral extends javax.swing.JFrame{
         cadastroFuncionariosButton = new javax.swing.JButton();
         salaoPanel = new javax.swing.JPanel();
         salaoLayeredPane = new javax.swing.JLayeredPane();
+        mesaPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         cadastroReservasButton = new javax.swing.JButton();
         vendasAvulsasButton = new javax.swing.JButton();
         tabelaPrecosButton = new javax.swing.JButton();
@@ -65,11 +66,9 @@ public class FrameCentral extends javax.swing.JFrame{
         sgrLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sgrLabel.setText("SGR - Sistema Gerenciador de Restaurante");
 
-//        cadastroFuncionariosButton.setText("Cadastro de Funcionï¿½rios");
-        cadastroFuncionariosButton.setText("Nova Venda");
+        cadastroFuncionariosButton.setText("Cadastro de Funcionários");
         cadastroFuncionariosButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroFuncionariosButtonActionPerformed(evt);
             }
         });
@@ -78,6 +77,43 @@ public class FrameCentral extends javax.swing.JFrame{
         salaoPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, new java.awt.Color(0, 0, 0), null, new java.awt.Color(0, 0, 0)));
 
         salaoLayeredPane.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 0), 2, true));
+
+        mesaPanel.setBackground(new java.awt.Color(255, 153, 153));
+        mesaPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 0, 0), null, null));
+        mesaPanel.setVerifyInputWhenFocusTarget(false);
+        mesaPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mesaPanelMouseClicked(evt);
+            }
+        });
+        mesaPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                mesaPanelMouseDragged(evt);
+            }
+        });
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Mesa");
+
+        javax.swing.GroupLayout mesaPanelLayout = new javax.swing.GroupLayout(mesaPanel);
+        mesaPanel.setLayout(mesaPanelLayout);
+        mesaPanelLayout.setHorizontalGroup(
+            mesaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mesaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        mesaPanelLayout.setVerticalGroup(
+            mesaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mesaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        mesaPanel.setBounds(70, 40, 50, 40);
+        salaoLayeredPane.add(mesaPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout salaoPanelLayout = new javax.swing.GroupLayout(salaoPanel);
         salaoPanel.setLayout(salaoPanelLayout);
@@ -90,47 +126,37 @@ public class FrameCentral extends javax.swing.JFrame{
             .addComponent(salaoLayeredPane, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
         );
 
-//        cadastroReservasButton.setText("Cadastro de Reservas");
-        cadastroReservasButton.setText("Reservas");
+        cadastroReservasButton.setText("Cadastro de Reservas");
         cadastroReservasButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroReservasButtonActionPerformed(evt);
             }
         });
 
-//        vendasAvulsasButton.setText("Menu de Vendas Avulsas");
-        vendasAvulsasButton.setText("Produtos");
+        vendasAvulsasButton.setText("Menu de Vendas Avulsas");
         vendasAvulsasButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vendasAvulsasButtonActionPerformed(evt);
             }
         });
 
-//        tabelaPrecosButton.setText("Tabela de Preï¿½os");
-        tabelaPrecosButton.setText("FuncionÃ¡rios");
+        tabelaPrecosButton.setText("Tabela de Preços");
         tabelaPrecosButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tabelaPrecosButtonActionPerformed(evt);
             }
         });
 
-        posicaoInicialButton.setText("PosiÃ§Ã£o Inicial das Mesas");
-        posicaoInicialButton.setVisible(false);
+        posicaoInicialButton.setText("Posição Inicial das Mesas");
         posicaoInicialButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-			public void mouseClicked(java.awt.event.MouseEvent evt) {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 posicaoInicialButtonMouseClicked(evt);
             }
         });
 
-//        consultaContasCadastradasButton.setText("Consulta Contas Cadastradas");
-        consultaContasCadastradasButton.setText("Controle de Vendas");
+        consultaContasCadastradasButton.setText("Consulta Contas Cadastradas");
         consultaContasCadastradasButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultaContasCadastradasButtonActionPerformed(evt);
             }
         });
@@ -194,6 +220,10 @@ public class FrameCentral extends javax.swing.JFrame{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void mesaPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mesaPanelMouseClicked
+// TODO adicione seu código de manipulação aqui:
+    }//GEN-LAST:event_mesaPanelMouseClicked
+
 private void cadastroFuncionariosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroFuncionariosButtonActionPerformed
 
     MenuCadastroFuncionario cadastroFuncionarios = new MenuCadastroFuncionario();
@@ -217,6 +247,25 @@ private void tabelaPrecosButtonActionPerformed(java.awt.event.ActionEvent evt) {
     MenuTabelaDePrecos tabela = MenuTabelaDePrecos.getInstancia();
     tabela.setVisible(true);
 }//GEN-LAST:event_tabelaPrecosButtonActionPerformed
+
+private void mesaPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mesaPanelMouseDragged
+// TODO add your handling code here:
+    // TODO add your handling code here:
+    int xSel = mesaPanel.getLocation().x;
+    int ySel = mesaPanel.getLocation().y;
+    mesaPanel.setLocation((evt.getX()  + xSel )- (mesaPanel.getWidth() / 2),(evt.getY() + ySel) - (mesaPanel.getHeight() / 2));  
+    repaint();
+    if (evt.getX() == mesaPanel.getX())
+    {
+        xSel = 49;
+    }
+    else
+    {
+    xSel = evt.getX();
+    }
+    ySel = evt.getY();
+    //jLabel1.setText(xSel + "," + ySel);
+}//GEN-LAST:event_mesaPanelMouseDragged
 
 private void posicaoInicialButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_posicaoInicialButtonMouseClicked
 
@@ -418,6 +467,8 @@ private void consultaContasCadastradasButtonActionPerformed(java.awt.event.Actio
     private javax.swing.JButton cadastroFuncionariosButton;
     private javax.swing.JButton cadastroReservasButton;
     private javax.swing.JButton consultaContasCadastradasButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel mesaPanel;
     private javax.swing.JPanel painelCentralPane;
     private javax.swing.JButton posicaoInicialButton;
     private javax.swing.JLayeredPane salaoLayeredPane;

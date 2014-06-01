@@ -97,7 +97,7 @@ public class ControleContas {
                 {
                     conta.addString("Produto:" + "    " + menuConta.getTable().getValueAt(i, 0).toString() +
                             "    " + "Quantidade:" + menuConta.getTable().getValueAt(i, 1) +
-                            "    " + "Preï¿½o:" + "    " + tabela.getPrecoProduto(i));
+                            "    " + "Preço:" + "    " + tabela.getPrecoProduto(i));
                 }
 
             }
@@ -117,10 +117,10 @@ public class ControleContas {
         DefaultListModel listaContas = new DefaultListModel();
         for (Conta c: array)
         {
-            contaString = ("Data:" + "    " + c.getData() + "    " + "Horï¿½rio Ocupaï¿½ï¿½o:" +
-                    "    " + c.getHorarioOcupacao() + "    " + "Horï¿½rio de Saï¿½da:" + "    " 
+            contaString = ("Data:" + "    " + c.getData() + "    " + "Horário Ocupação:" +
+                    "    " + c.getHorarioOcupacao() + "    " + "Horário de Saída:" + "    " 
                     + c.getHorarioSaida() + "    "
-                    + "Nï¿½ de Pessoas:" + "    " + c.getNumOcupantes());
+                    + "N° de Pessoas:" + "    " + c.getNumOcupantes());
             listaContas.addElement(contaString);
         }
         menuConsultaConta.setContasCadastradasList(listaContas);

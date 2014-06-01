@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author  Usuï¿½rio
+ * @author  Usuário
  */
 public class MenuMesaLivre extends javax.swing.JFrame {
 
@@ -56,10 +56,10 @@ public class MenuMesaLivre extends javax.swing.JFrame {
         mesaLivreLabel.setFont(new java.awt.Font("Tahoma", 1, 14));
         mesaLivreLabel.setForeground(new java.awt.Color(0, 153, 51));
         mesaLivreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mesaLivreLabel.setText("A Mesa estï¿½ Livre");
+        mesaLivreLabel.setText("A Mesa está Livre");
 
         numeroMesaLabel.setForeground(new java.awt.Color(255, 255, 255));
-        numeroMesaLabel.setText("Nï¿½mero da Mesa:");
+        numeroMesaLabel.setText("Número da Mesa:");
 
         numeroMesaTextField.setColumns(3);
         numeroMesaTextField.setEditable(false);

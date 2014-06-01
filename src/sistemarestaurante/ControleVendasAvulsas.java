@@ -47,7 +47,7 @@ public class ControleVendasAvulsas {
     {
         if (menuVendas.getListaProdutosList().getFirstVisibleIndex() == -1)
         {
-            JOptionPane.showMessageDialog(null, "Erro! Vocï¿½ nï¿½o inseriu nenhum produto na venda!", 
+            JOptionPane.showMessageDialog(null, "Erro! Você não inseriu nenhum produto na venda!", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         }
         else
@@ -79,7 +79,7 @@ public class ControleVendasAvulsas {
         {
             
             listaVendas.addElement("Data:" + "    " + v.getDataVenda() + "    " +
-                    "Horï¿½rio:" + "    " + v.getHorarioVenda() + "    " + "Valor Total:" +
+                    "Horário:" + "    " + v.getHorarioVenda() + "    " + "Valor Total:" +
                     "    " + v.getValorTotal());
         }
         menuVendas.setListaVendas(listaVendas);

@@ -165,7 +165,7 @@ public class MenuReservas extends javax.swing.JFrame {
         emailLabel.setText("E-mail: ");
 
         enderecoLabel.setForeground(new java.awt.Color(255, 255, 255));
-        enderecoLabel.setText("Endereï¿½o:");
+        enderecoLabel.setText("Endereço:");
 
         cidadeLabel.setForeground(new java.awt.Color(255, 255, 255));
         cidadeLabel.setText("Cidade:");
@@ -309,7 +309,7 @@ public class MenuReservas extends javax.swing.JFrame {
         dadoReservaPanel.setOpaque(false);
 
         numeroPessoasLabel.setForeground(new java.awt.Color(255, 255, 255));
-        numeroPessoasLabel.setText("Nï¿½mero de Pessoas *:");
+        numeroPessoasLabel.setText("Número de Pessoas *:");
 
         numeroPessoasTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         numeroPessoasTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -321,7 +321,7 @@ public class MenuReservas extends javax.swing.JFrame {
         tipoReservaLabel.setForeground(new java.awt.Color(255, 255, 255));
         tipoReservaLabel.setText("Tipo de Reserva *:");
 
-        tipoReservaComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Almoï¿½o", "Jantar", "Evento" }));
+        tipoReservaComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Almoço", "Jantar", "Evento" }));
 
         dataLabel.setForeground(new java.awt.Color(255, 255, 255));
         dataLabel.setText("Data da Reserva *:");
@@ -335,7 +335,7 @@ public class MenuReservas extends javax.swing.JFrame {
         });
 
         horarioLabel.setForeground(new java.awt.Color(255, 255, 255));
-        horarioLabel.setText("Horï¿½rio da Reserva *:");
+        horarioLabel.setText("Horário da Reserva *:");
 
         horarioFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
         horarioFormattedTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -346,7 +346,7 @@ public class MenuReservas extends javax.swing.JFrame {
         });
 
         informacoesAdicionaisLabel.setForeground(new java.awt.Color(255, 255, 255));
-        informacoesAdicionaisLabel.setText("Informaï¿½ï¿½es Adicionais:");
+        informacoesAdicionaisLabel.setText("Informações Adicionais:");
 
         informacoesAdicionaistextArea.setColumns(20);
         informacoesAdicionaistextArea.setLineWrap(true);
@@ -466,7 +466,7 @@ public class MenuReservas extends javax.swing.JFrame {
         });
 
         asteriscoLabel.setForeground(new java.awt.Color(255, 255, 255));
-        asteriscoLabel.setText("(*) Campos de Preenchimento Obrigatï¿½rio.");
+        asteriscoLabel.setText("(*) Campos de Preenchimento Obrigatório.");
 
         cadastraAtualizarReservaButton.setText("Cadastrar Reserva");
         cadastraAtualizarReservaButton.addActionListener(new java.awt.event.ActionListener() {
@@ -574,7 +574,7 @@ private void removerClienteButtonActionPerformed(java.awt.event.ActionEvent evt)
     // TODO add your handling code here:
     if (!clientesCadastradosList.isSelectionEmpty())
     {
-        int option = JOptionPane.showConfirmDialog(null, "Aviso: Vocï¿½ estï¿½ prestes a remover um registro de Cliente!" +
+        int option = JOptionPane.showConfirmDialog(null, "Aviso: Você está prestes a remover um registro de Cliente!" +
                 " Deseja remover assim mesmo?", "Cuidado!", JOptionPane.YES_NO_OPTION, 
             JOptionPane.WARNING_MESSAGE);
         if (option == 0)
@@ -609,7 +609,7 @@ private void removerReservaButtonActionPerformed(java.awt.event.ActionEvent evt)
 // TODO add your handling code here:
     if (!listaReservasList.isSelectionEmpty())
     {
-        int option = JOptionPane.showConfirmDialog(null, "Aviso: Vocï¿½ estï¿½ prestes a remover um registro de Reserva!" +
+        int option = JOptionPane.showConfirmDialog(null, "Aviso: Você está prestes a remover um registro de Reserva!" +
                 "Deseja remover assim mesmo?", "Cuidado!", JOptionPane.YES_NO_OPTION, 
             JOptionPane.WARNING_MESSAGE);
         if (option == 0)

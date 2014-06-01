@@ -12,7 +12,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 /**
  *
- * @author  Usuï¿½rio
+ * @author  Usuário
  */
 public class MenuMesaOcupada extends javax.swing.JFrame {
 
@@ -104,17 +104,17 @@ public class MenuMesaOcupada extends javax.swing.JFrame {
         mesaOcupadaLabel.setFont(new java.awt.Font("Tahoma", 1, 14));
         mesaOcupadaLabel.setForeground(new java.awt.Color(204, 0, 51));
         mesaOcupadaLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mesaOcupadaLabel.setText("A Mesa estï¿½ Ocupada");
+        mesaOcupadaLabel.setText("A Mesa está Ocupada");
 
         numeroMesaLabel.setForeground(new java.awt.Color(255, 255, 255));
-        numeroMesaLabel.setText("Nï¿½mero da Mesa:");
+        numeroMesaLabel.setText("Número da Mesa:");
 
         numeroMesaTextField.setColumns(3);
         numeroMesaTextField.setEditable(false);
         numeroMesaTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         numeroOcupantesLabel.setForeground(new java.awt.Color(255, 255, 255));
-        numeroOcupantesLabel.setText("Nï¿½mero de Ocupantes:");
+        numeroOcupantesLabel.setText("Número de Ocupantes:");
 
         numeroOcupantesTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,14 +145,14 @@ public class MenuMesaOcupada extends javax.swing.JFrame {
         });
 
         horarioOcupacaoLabel.setForeground(new java.awt.Color(255, 255, 255));
-        horarioOcupacaoLabel.setText("Horï¿½rio de Ocupaï¿½ï¿½o:");
+        horarioOcupacaoLabel.setText("Horário de Ocupação:");
 
         horarioOcupacaoFormattedTextField.setEditable(false);
         horarioOcupacaoFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
         horarioOcupacaoFormattedTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         horarioSaidaLabel.setForeground(new java.awt.Color(255, 255, 255));
-        horarioSaidaLabel.setText("Horï¿½rio de Saï¿½da (hh:mm):");
+        horarioSaidaLabel.setText("Horário de Saída (hh:mm):");
 
         horarioSaidaFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
         horarioSaidaFormattedTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -161,7 +161,7 @@ public class MenuMesaOcupada extends javax.swing.JFrame {
         mesaOcupadaSeparator.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         vincularContaLabel.setForeground(new java.awt.Color(255, 255, 255));
-        vincularContaLabel.setText("Mesas a serem Vinculadas ï¿½ Conta:");
+        vincularContaLabel.setText("Mesas a serem Vinculadas à Conta:");
 
         mesasVinculadasComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50" }));
 
@@ -311,7 +311,7 @@ private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 private void tornarLivreButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tornarLivreButtonMouseClicked
 
     int resposta = JOptionPane.showConfirmDialog(null, "Aviso: Os dados inseridos na tela anterior " +
-            "nï¿½o foram salvos! Deseja salvï¿½-los agora mesmo?", "Cuidado!", JOptionPane.YES_NO_OPTION, 
+            "não foram salvos! Deseja salvá-los agora mesmo?", "Cuidado!", JOptionPane.YES_NO_OPTION, 
             JOptionPane.WARNING_MESSAGE);
     if (resposta == 0)
     {
@@ -319,7 +319,7 @@ private void tornarLivreButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN
     }
     else
     {
-        //nï¿½o
+        //não
     }
     inter = InterfaceInternaCentral.getInstancia();
     inter.ocupadaParaLivre(controle);

@@ -112,17 +112,17 @@ public class MenuConta extends javax.swing.JFrame {
                 {"Marmitex", new Integer(0)},
                 {"Sopa (mesa)", new Integer(0)},
                 {"Cerveja Garrafa", new Integer(0)},
-                {"ï¿½ Cerveja ", new Integer(0)},
+                {"½ Cerveja ", new Integer(0)},
                 {"Cerveja Lata 350ml", new Integer(0)},
                 {"Refrigerante Garrafa 290ml", new Integer(0)},
                 {"Refrigerante Lata 350ml", new Integer(0)},
                 {"Refrigerante 600ml", new Integer(0)},
                 {"Refrigerante Litro", new Integer(0)},
                 {"Refrigerante 2 Litros", new Integer(0)},
-                {"ï¿½gua", new Integer(0)},
+                {"Água", new Integer(0)},
                 {"Suco", new Integer(0)},
                 {"Aperitivo", new Integer(0)},
-                {"Vinho (taï¿½a)", new Integer(0)},
+                {"Vinho (taça)", new Integer(0)},
                 {"Vinho (jarra)", new Integer(0)}
             },
             new String [] {
@@ -174,7 +174,7 @@ public class MenuConta extends javax.swing.JFrame {
             }
         });
 
-        adicionarButton.setText("Adicionar Item ï¿½ Lista");
+        adicionarButton.setText("Adicionar Item à Lista");
         adicionarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adicionarButtonActionPerformed(evt);
@@ -187,7 +187,7 @@ public class MenuConta extends javax.swing.JFrame {
 
         precoLabel.setForeground(new java.awt.Color(255, 255, 255));
         precoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        precoLabel.setText("Preï¿½o:");
+        precoLabel.setText("Preço:");
 
         quantidadeLabel.setForeground(new java.awt.Color(255, 255, 255));
         quantidadeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -336,17 +336,17 @@ public class MenuConta extends javax.swing.JFrame {
     private void adicionarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarButtonActionPerformed
         // TODO add your handling code here:
         if (getNomeProduto().equals("")) {
-            JOptionPane.showMessageDialog(null, "Erro! Vocï¿½ nï¿½o inseriu o nome ou tipo do produto!",
+            JOptionPane.showMessageDialog(null, "Erro! Você não inseriu o nome ou tipo do produto!",
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         } else if (getPreco() == 0) {
-            JOptionPane.showMessageDialog(null, "Erro! Vocï¿½ nï¿½o inseriu o preï¿½o do produto!",
+            JOptionPane.showMessageDialog(null, "Erro! Você não inseriu o preço do produto!",
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         } else if (getQuantidade() == 0) {
-            JOptionPane.showMessageDialog(null, "Erro! Vocï¿½ nï¿½o inseriu a quantidade do produto!",
+            JOptionPane.showMessageDialog(null, "Erro! Você não inseriu a quantidade do produto!",
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         } else {
             String produto = (getNomeProduto() + "    " + "Quantidade:" + "    " +
-                    getQuantidade() + "    " + "Preï¿½o:" + "    " + getPreco());
+                    getQuantidade() + "    " + "Preço:" + "    " + getPreco());
             listaProdutos.addElement(produto);
             listaProdutosArrayList.add(produto);
             Collections.sort(listaProdutosArrayList);

@@ -83,7 +83,7 @@ public class MenuCadastroFuncionario extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("SGR - Menu de Cadastro de Funcionï¿½rios");
+        setTitle("SGR - Menu de Cadastro de Funcionários");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
 
@@ -93,9 +93,9 @@ public class MenuCadastroFuncionario extends javax.swing.JFrame {
         cadastroFuncionarioLabel.setFont(new java.awt.Font("Tahoma", 1, 18));
         cadastroFuncionarioLabel.setForeground(new java.awt.Color(255, 255, 255));
         cadastroFuncionarioLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        cadastroFuncionarioLabel.setText("Cadastro de Funcionï¿½rios");
+        cadastroFuncionarioLabel.setText("Cadastro de Funcionários");
 
-        dadosFuncionarioPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 0), 1, true), "Dados do Funcionï¿½rio", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 204, 0))); // NOI18N
+        dadosFuncionarioPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 0), 1, true), "Dados do Funcionário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 204, 0))); // NOI18N
         dadosFuncionarioPanel.setForeground(new java.awt.Color(51, 153, 0));
         dadosFuncionarioPanel.setOpaque(false);
 
@@ -135,7 +135,7 @@ public class MenuCadastroFuncionario extends javax.swing.JFrame {
         estadoCivilLabel.setText("Estado Civil:");
 
         enderecoLabel.setForeground(new java.awt.Color(255, 255, 255));
-        enderecoLabel.setText("Endereï¿½o:");
+        enderecoLabel.setText("Endereço:");
 
         criarCadastroButton.setText("Criar Cadastro");
         criarCadastroButton.addActionListener(new java.awt.event.ActionListener() {
@@ -158,10 +158,10 @@ public class MenuCadastroFuncionario extends javax.swing.JFrame {
         cargoLabel.setForeground(new java.awt.Color(255, 255, 255));
         cargoLabel.setText("Cargo no Restaurante:");
 
-        cargoComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cozinheira(o)", "Garï¿½om/Garï¿½onete", "Gerente", "Faxineira(o)" }));
+        cargoComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cozinheira(o)", "Garçom/Garçonete", "Gerente", "Faxineira(o)" }));
 
         salarioLabel.setForeground(new java.awt.Color(255, 255, 255));
-        salarioLabel.setText("Salï¿½rio:");
+        salarioLabel.setText("Salário:");
 
         salarioFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
@@ -359,7 +359,7 @@ private void removerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN
     // TODO add your handling code here:
     if (!listaCadastrosList.isSelectionEmpty())
     {
-        int option = JOptionPane.showConfirmDialog(null, "Aviso: Vocï¿½ estï¿½ prestes a remover um registro de Funcionï¿½rio!" +
+        int option = JOptionPane.showConfirmDialog(null, "Aviso: Você está prestes a remover um registro de Funcionário!" +
                 "Deseja remover assim mesmo?", "Cuidado!", JOptionPane.YES_NO_OPTION, 
             JOptionPane.WARNING_MESSAGE);
         if (option == 0)
