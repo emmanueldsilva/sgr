@@ -29,10 +29,14 @@ public class Main {
             /*FrameCentral frameCentral = new FrameCentral();
             frameCentral.setVisible(true);
             frameCentral.instanciaMesas();*/
-                FrameCentral programa;
-                programa = FrameCentral.getInstancia();
-                programa.setVisible(true);
-                programa.instanciaMesas();
+            
+            Login login = new Login();
+            login.setVisible(true);
+                
+//                FrameCentral programa;
+//                programa = FrameCentral.getInstancia();
+//                programa.setVisible(true);
+//                programa.instanciaMesas();
             }
         });
     }

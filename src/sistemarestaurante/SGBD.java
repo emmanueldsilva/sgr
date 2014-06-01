@@ -18,6 +18,7 @@ import java.util.ArrayList;
  */
 public class SGBD {
     private static ObjectContainer bd_clientes = null;
+    private static ObjectContainer bd_usuarios = null;
     private static ObjectContainer bd_reservas = null;
     private static ObjectContainer bd_funcionarios = null;
     private static ObjectContainer bd_vendasavulsas = null;
@@ -28,6 +29,7 @@ public class SGBD {
     private SGBD()
     {
         bd_clientes = Db4o.openFile("BaseDeDados_Clientes");
+        bd_usuarios = Db4o.openFile("BaseDeDados_Usuarios");
         bd_reservas = Db4o.openFile("BaseDeDados_Reservas");
         bd_funcionarios = Db4o.openFile("BaseDeDados_Funcionarios");
         bd_vendasavulsas = Db4o.openFile("BaseDeDados_VendasAvulsas");
@@ -52,6 +54,21 @@ public class SGBD {
         catch (Exception e)
         {
             new Exception("erro ao armazenar cliente no banco de dados");
+        }
+    }
+    
+    public void armazenaUsuario(Usuario usuario)
+    {
+        try
+        {
+            if (buscaUsuarios(usuario).isEmpty()) {
+                bd_usuarios.store(usuario);
+                bd_usuarios.commit();
+            } 
+        }
+        catch (Exception e)
+        {
+            new Exception("erro ao armazenar usuario no banco de dados");
         }
     }
     
@@ -145,6 +162,24 @@ public class SGBD {
             ObjectSet<Cliente> lista = bd_clientes.queryByExample(clienteProt);
             for(Cliente c: lista)
                 array.add(c);
+            return array;
+        }
+        catch (Exception e)
+        {
+            new Exception("erro ao fazer a consulta no banco de dados");
+            return null;
+        }
+    }
+    
+    public ArrayList<Usuario> buscaUsuarios(Usuario usuario)
+    {
+        Usuario usuarioProt = usuario;
+        try
+        {
+            ArrayList<Usuario> array = new ArrayList<Usuario>();
+            ObjectSet<Usuario> lista = bd_usuarios.queryByExample(usuarioProt);
+            for(Usuario u: lista)
+                array.add(u);
             return array;
         }
         catch (Exception e)

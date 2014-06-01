@@ -21,6 +21,8 @@ public class FrameCentral extends javax.swing.JFrame{
     private ArrayList<ControleMesa> conjuntoMesas = new ArrayList<ControleMesa>();
     private static FrameCentral frame = null;
     private final int comprimento = 40, largura = 40;
+    private Usuario usuario;
+
     /** Creates new form frameCentral */
     private FrameCentral() {
         super("SGR - Sistema Gerenciador de Restaurante");
@@ -51,6 +53,8 @@ public class FrameCentral extends javax.swing.JFrame{
         tabelaPrecosButton = new javax.swing.JButton();
         posicaoInicialButton = new javax.swing.JButton();
         consultaContasCadastradasButton = new javax.swing.JButton();
+        logadoLabel = new javax.swing.JLabel();
+        loginLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 255));
@@ -161,6 +165,12 @@ public class FrameCentral extends javax.swing.JFrame{
             }
         });
 
+        logadoLabel.setBackground(new java.awt.Color(255, 255, 255));
+        logadoLabel.setForeground(new java.awt.Color(254, 254, 254));
+        logadoLabel.setText("Logado como:");
+
+        loginLabel.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout painelCentralPaneLayout = new javax.swing.GroupLayout(painelCentralPane);
         painelCentralPane.setLayout(painelCentralPaneLayout);
         painelCentralPaneLayout.setHorizontalGroup(
@@ -172,13 +182,22 @@ public class FrameCentral extends javax.swing.JFrame{
                     .addComponent(sgrLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1109, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelCentralPaneLayout.createSequentialGroup()
                         .addComponent(salaoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addGroup(painelCentralPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(consultaContasCadastradasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 190, Short.MAX_VALUE)
-                            .addComponent(tabelaPrecosButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                            .addComponent(cadastroReservasButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                            .addComponent(vendasAvulsasButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                            .addComponent(cadastroFuncionariosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))))
+                        .addGroup(painelCentralPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelCentralPaneLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(painelCentralPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(consultaContasCadastradasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 190, Short.MAX_VALUE)
+                                    .addComponent(tabelaPrecosButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                                    .addComponent(cadastroReservasButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                                    .addComponent(vendasAvulsasButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                                    .addComponent(cadastroFuncionariosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)))
+                            .addGroup(painelCentralPaneLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(painelCentralPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(loginLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(painelCentralPaneLayout.createSequentialGroup()
+                                        .addComponent(logadoLabel)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))))
                 .addContainerGap())
         );
         painelCentralPaneLayout.setVerticalGroup(
@@ -187,7 +206,7 @@ public class FrameCentral extends javax.swing.JFrame{
                 .addContainerGap()
                 .addComponent(sgrLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelCentralPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(painelCentralPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(painelCentralPaneLayout.createSequentialGroup()
                         .addComponent(cadastroFuncionariosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -197,10 +216,14 @@ public class FrameCentral extends javax.swing.JFrame{
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tabelaPrecosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(consultaContasCadastradasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(consultaContasCadastradasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(logadoLabel))
                     .addComponent(salaoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(posicaoInicialButton, javax.swing.GroupLayout.PREFERRED_SIZE, 22, Short.MAX_VALUE)
+                .addGroup(painelCentralPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(posicaoInicialButton, javax.swing.GroupLayout.PREFERRED_SIZE, 22, Short.MAX_VALUE)
+                    .addComponent(loginLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -459,13 +482,23 @@ private void consultaContasCadastradasButtonActionPerformed(java.awt.event.Actio
         }
         mostrarNaTela(conjuntoMesas);
     }
-   
+    
+    void setUsuarioLogado(Usuario usuario) {
+        this.usuario = usuario;
+        loginLabel.setText(usuario.getLogin());
+    }
+    
+    public Usuario getUsuario() {
+        return usuario;
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cadastroFuncionariosButton;
     private javax.swing.JButton cadastroReservasButton;
     private javax.swing.JButton consultaContasCadastradasButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel logadoLabel;
+    private javax.swing.JLabel loginLabel;
     private javax.swing.JPanel mesaPanel;
     private javax.swing.JPanel painelCentralPane;
     private javax.swing.JButton posicaoInicialButton;
