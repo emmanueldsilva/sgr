@@ -1,5 +1,5 @@
 /*
- * TabelaDePreços.java
+ * TabelaDePreï¿½os.java
  *
  * Created on 15 de Setembro de 2008, 23:29
  */
@@ -8,12 +8,12 @@ package sistemarestaurante;
 
 /**
  *
- * @author  Usuário
+ * @author  Usuï¿½rio
  */
-public class TabelaDePreços extends javax.swing.JFrame {
+public class TabelaDePreÃ§os extends javax.swing.JFrame {
 
-    /** Creates new form TabelaDePreços */
-    public TabelaDePreços() {
+    /** Creates new form TabelaDePreï¿½os */
+    public TabelaDePreÃ§os() {
         initComponents();
     }
 
@@ -36,17 +36,17 @@ public class TabelaDePreços extends javax.swing.JFrame {
         okButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("SGR - Tabela de Preços");
+        setTitle("SGR - Tabela de PreÃ§os");
         setResizable(false);
 
         painelTabelaDePrecosPanel.setBackground(new java.awt.Color(204, 204, 255));
         painelTabelaDePrecosPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        tabelaDePrecosLabel.setFont(new java.awt.Font("Tahoma", 1, 18));
+        tabelaDePrecosLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         tabelaDePrecosLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tabelaDePrecosLabel.setText("Tabela de Preços");
+        tabelaDePrecosLabel.setText("Tabela de PreÃ§os");
 
-        produtosPrecosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 51, 255), 1, true), "Produtos e Preços"));
+        produtosPrecosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 51, 255), 1, true), "Produtos e PreÃ§os"));
         produtosPrecosPanel.setOpaque(false);
 
         tabelaDePrecosTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -57,21 +57,21 @@ public class TabelaDePreços extends javax.swing.JFrame {
                 {"Marmitex", "6.50"},
                 {"Sopa (mesa)", "9.00"},
                 {"Cerveja Garrafa", "4.00"},
-                {"½ Cerveja ", "2.50"},
+                {"Â½ Cerveja ", "2.50"},
                 {"Cerveja Lata 350ml", "2.50"},
                 {"Refrigerante Garrafa 290ml", "2.00"},
                 {"Refrigerante Lata 350ml", "2.50"},
                 {"Refrigerante 600ml", "3.00"},
                 {"Refrigerante Litro", "3.00"},
                 {"Refrigerante 2 Litros", "4.00"},
-                {"Água", "2.00"},
+                {"Ãgua", "2.00"},
                 {"Suco", "2.00"},
                 {"Aperitivo", "3.00"},
-                {"Vinho (taça)", "3.00"},
+                {"Vinho (taÃ§a)", "3.00"},
                 {"Vinho (jarra)", "8.00"}
             },
             new String [] {
-                "Nome do Produto", "Preço"
+                "Nome do Produto", "PreÃ§o"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -84,8 +84,10 @@ public class TabelaDePreços extends javax.swing.JFrame {
         });
         tabelaDePrecosTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tabelaDePrecosTable);
-        tabelaDePrecosTable.getColumnModel().getColumn(0).setResizable(false);
-        tabelaDePrecosTable.getColumnModel().getColumn(1).setResizable(false);
+        if (tabelaDePrecosTable.getColumnModel().getColumnCount() > 0) {
+            tabelaDePrecosTable.getColumnModel().getColumn(0).setResizable(false);
+            tabelaDePrecosTable.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         javax.swing.GroupLayout produtosPrecosPanelLayout = new javax.swing.GroupLayout(produtosPrecosPanel);
         produtosPrecosPanel.setLayout(produtosPrecosPanelLayout);
@@ -121,7 +123,7 @@ public class TabelaDePreços extends javax.swing.JFrame {
             .addGroup(painelTabelaDePrecosPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(painelTabelaDePrecosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tabelaDePrecosLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
+                    .addComponent(tabelaDePrecosLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(produtosPrecosPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelTabelaDePrecosPanelLayout.createSequentialGroup()
                         .addComponent(okButton)
@@ -170,7 +172,7 @@ private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TabelaDePreços().setVisible(true);
+                new TabelaDePreÃ§os().setVisible(true);
             }
         });
     }
