@@ -7,7 +7,7 @@ package sistemarestaurante;
 
 /**
  *
- * @author Usu·rio
+ * @author Usu√°rio
  */
 import java.awt.Color;
 //import java.awt.Frame;
@@ -30,7 +30,7 @@ public class ControleMesa {
     public ControleMesa(int x, int y, int width, int height)
     {
         this.x = x;
-        this.y = y;  //salva a posiÁ„o inicial das mesas.
+        this.y = y;  //salva a posi√ß√£o inicial das mesas.
         this.width = width;
         this.height = height;
         //this.status = -1; //determina o status da mesa como livre.
@@ -92,7 +92,7 @@ public class ControleMesa {
     
     
     /**
-     * MÈtodo respons·vel por retornar o Painel mesa.
+     * M√©todo respons√°vel por retornar o Painel mesa.
      * @return mesa.
      */
     public JPanel getPainel()
@@ -102,7 +102,7 @@ public class ControleMesa {
     
     
     /**
-     * MÈtodo respons·vel por clicar e arrastar o painel na interface.
+     * M√©todo respons√°vel por clicar e arrastar o painel na interface.
      * @param Mouse event.
      */
     private void mesaMouseDragged(java.awt.event.MouseEvent evt)
@@ -124,7 +124,7 @@ public class ControleMesa {
     
     
     /**
-     * MÈtodo respons·vel por clicar no painel na interface.
+     * M√©todo respons√°vel por clicar no painel na interface.
      * @param Mouse event.
      */
     /*private void mesaMouseClicked(java.awt.event.MouseEvent evt)
@@ -139,7 +139,7 @@ public class ControleMesa {
 
 
     /**
-     * MÈtodo respons·vel por definir o n˙mero da mesa.
+     * M√©todo respons√°vel por definir o n√∫mero da mesa.
      * @param num
      */
     public void setNumMesa(int num)
@@ -149,7 +149,7 @@ public class ControleMesa {
 
 
     /**
-     * MÈtodo para retornar a mesa ‡ sua posiÁ„o inicial.
+     * M√©todo para retornar a mesa √† sua posi√ß√£o inicial.
      */
     public void posicaoInicial()
     {
@@ -158,7 +158,7 @@ public class ControleMesa {
 
 
     /**
-     * MÈtodo para tornar a mesa visÌvel.
+     * M√©todo para tornar a mesa vis√≠vel.
      * @param valor
      */
     public void setVisible(boolean valor)
@@ -168,7 +168,7 @@ public class ControleMesa {
 
     
     /**
-     * MÈtodo respons·vel por retornar o status da mesa.
+     * M√©todo respons√°vel por retornar o status da mesa.
      * @return status
      */
     public int getStatus() {
@@ -177,7 +177,7 @@ public class ControleMesa {
 
     
     /**
-     * MÈtodo respons·vel por alterar o status da mesa.
+     * M√©todo respons√°vel por alterar o status da mesa.
      * @param status
      */
     public void setStatus(int status) {
@@ -185,7 +185,7 @@ public class ControleMesa {
     }
     
     /**
-     * MÈtodo respons·vel por retornar no n˙mero do controle da mesa.
+     * M√©todo respons√°vel por retornar no n√∫mero do controle da mesa.
      * @return numeroControle;
      */
     public int getNumControle()
@@ -195,7 +195,7 @@ public class ControleMesa {
     
     
     /**
-     * MÈtodo respons·vel por retornar o valor da altura do painel.
+     * M√©todo respons√°vel por retornar o valor da altura do painel.
      * @return height
      */
     public int getAltura()
@@ -205,7 +205,7 @@ public class ControleMesa {
     
     
     /**
-     * MÈtodo respons·vel por retornar o valor da largura do painel.
+     * M√©todo respons√°vel por retornar o valor da largura do painel.
      * @return width
      */
     public int getLargura()
@@ -214,7 +214,7 @@ public class ControleMesa {
     }
 
     /**
-     * MÈtodo respons·vel por retornar o valor de X.
+     * M√©todo respons√°vel por retornar o valor de X.
      * @return x
      */
     public int getX() {
@@ -222,7 +222,7 @@ public class ControleMesa {
     }
 
     /**
-     * MÈtodo respon·vel por retornar o valor de Y.
+     * M√©todo respons√°vel por retornar o valor de Y.
      * @return y
      */
     public int getY() {

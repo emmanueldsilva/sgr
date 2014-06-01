@@ -61,12 +61,12 @@ public class FrameCentral extends javax.swing.JFrame{
         painelCentralPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 0), 2));
         painelCentralPane.setForeground(new java.awt.Color(255, 255, 255));
 
-        sgrLabel.setFont(new java.awt.Font("Tahoma", 1, 18));
+        sgrLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         sgrLabel.setForeground(new java.awt.Color(255, 255, 255));
         sgrLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sgrLabel.setText("SGR - Sistema Gerenciador de Restaurante");
 
-        cadastroFuncionariosButton.setText("Cadastro de Funcion·rios");
+        cadastroFuncionariosButton.setText("Cadastro de Funcion√°rios");
         cadastroFuncionariosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroFuncionariosButtonActionPerformed(evt);
@@ -101,19 +101,19 @@ public class FrameCentral extends javax.swing.JFrame{
             mesaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mesaPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, Short.MAX_VALUE)
                 .addContainerGap())
         );
         mesaPanelLayout.setVerticalGroup(
             mesaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mesaPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
+        salaoLayeredPane.add(mesaPanel);
         mesaPanel.setBounds(70, 40, 50, 40);
-        salaoLayeredPane.add(mesaPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout salaoPanelLayout = new javax.swing.GroupLayout(salaoPanel);
         salaoPanel.setLayout(salaoPanelLayout);
@@ -140,14 +140,14 @@ public class FrameCentral extends javax.swing.JFrame{
             }
         });
 
-        tabelaPrecosButton.setText("Tabela de PreÁos");
+        tabelaPrecosButton.setText("Tabela de Pre√ßos");
         tabelaPrecosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tabelaPrecosButtonActionPerformed(evt);
             }
         });
 
-        posicaoInicialButton.setText("PosiÁ„o Inicial das Mesas");
+        posicaoInicialButton.setText("Posi√ß√£o Inicial das Mesas");
         posicaoInicialButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 posicaoInicialButtonMouseClicked(evt);
@@ -174,13 +174,11 @@ public class FrameCentral extends javax.swing.JFrame{
                         .addComponent(salaoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addGroup(painelCentralPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(consultaContasCadastradasButton, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                            .addComponent(consultaContasCadastradasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 190, Short.MAX_VALUE)
                             .addComponent(tabelaPrecosButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
                             .addComponent(cadastroReservasButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
                             .addComponent(vendasAvulsasButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                            .addGroup(painelCentralPaneLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cadastroFuncionariosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)))))
+                            .addComponent(cadastroFuncionariosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         painelCentralPaneLayout.setVerticalGroup(
@@ -221,7 +219,7 @@ public class FrameCentral extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void mesaPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mesaPanelMouseClicked
-// TODO adicione seu cÛdigo de manipulaÁ„o aqui:
+// TODO adicione seu c√≥digo de manipula√ß√£o aqui:
     }//GEN-LAST:event_mesaPanelMouseClicked
 
 private void cadastroFuncionariosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroFuncionariosButtonActionPerformed

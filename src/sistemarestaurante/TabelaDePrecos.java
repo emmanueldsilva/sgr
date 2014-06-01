@@ -7,10 +7,6 @@ package sistemarestaurante;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Usuário
- */
 public class TabelaDePrecos {
 
     private ArrayList<Double> precos;

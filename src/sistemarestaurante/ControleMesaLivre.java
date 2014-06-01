@@ -40,7 +40,7 @@ public class ControleMesaLivre extends ControleMesa{
     }
     
     /**
-     * MÈtodo respons·vel por clicar no painel na interface.
+     * M√©todo respons√°vel por clicar no painel na interface.
      * @param Mouse event.
      */
     private void mesaMouseClicked(java.awt.event.MouseEvent evt)

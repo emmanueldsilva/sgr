@@ -45,12 +45,12 @@ public class ControleReservas
         //System.out.println(menuReservas.getNumeroPessoasReserva() + "");
         if (menuReservas.getNomeCliente().equals(""))
         {
-            JOptionPane.showMessageDialog(null, "Erro! Você não digitou o nome do cliente!", 
+            JOptionPane.showMessageDialog(null, "Erro! VocÃª nÃ£o digitou o nome do cliente!", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         }
         else if (menuReservas.getTelefoneCliente().equals("(  )    -    "))
         {
-            JOptionPane.showMessageDialog(null, "Erro! Você não digitou o telefone do cliente!", 
+            JOptionPane.showMessageDialog(null, "Erro! VocÃª nÃ£o digitou o telefone do cliente!", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         }
         else{
@@ -74,28 +74,28 @@ public class ControleReservas
     {
         if (menuReservas.getNomeClienteSelecionado().equals(""))
         {
-            JOptionPane.showMessageDialog(null, "Erro! Você não selecionou o cliente da reserva! \n" +
-                    "Verifique se o campo 'Cliente Selecionado para a Reserva' está sem preenchimento.", 
+            JOptionPane.showMessageDialog(null, "Erro! VocÃª nÃ£o selecionou o cliente da reserva! \n" +
+                    "Verifique se o campo 'Cliente Selecionado para a Reserva' estÃ¡ sem preenchimento.", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         }
         else if (menuReservas.getNumeroPessoasReserva() == 0)
         {
-            JOptionPane.showMessageDialog(null, "Erro! Você não digitou número de pessoas da reserva!", 
+            JOptionPane.showMessageDialog(null, "Erro! VocÃª nÃ£o digitou nÃºmero de pessoas da reserva!", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         }
         else if (menuReservas.getTipoReserva().equals(""))
         {
-            JOptionPane.showMessageDialog(null, "Erro! Você não selecionou o tipo da reserva!", 
+            JOptionPane.showMessageDialog(null, "Erro! VocÃª nÃ£o selecionou o tipo da reserva!", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         }
         else if (menuReservas.getDataReserva().equals(""))
         {
-            JOptionPane.showMessageDialog(null, "Erro! Você não digitou a data da reserva!", 
+            JOptionPane.showMessageDialog(null, "Erro! VocÃª nÃ£o digitou a data da reserva!", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         }
         else if (menuReservas.getHorarioReserva().equals(""))
         {
-            JOptionPane.showMessageDialog(null, "Erro! Você não digitou o horário da reserva!", 
+            JOptionPane.showMessageDialog(null, "Erro! VocÃª nÃ£o digitou o horÃ¡rio da reserva!", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         }
         else
@@ -143,11 +143,11 @@ public class ControleReservas
             /*System.out.println(res.getTipoReserva() + "    " + res.getCliente().getNome() +
                     "    " + res.getCliente().getTelefone() +
                     "    " + res.getDataReserva() + "    " + res.getHorarioReserva() + 
-                    "    " + "Número de Pessoas:" + "    " + res.getNumeroPessoasReserva());*/
+                    "    " + "Nï¿½mero de Pessoas:" + "    " + res.getNumeroPessoasReserva());*/
             listaReservas.addElement(res.getTipoReserva() + "    " + res.getCliente().getNome() + 
                     "    " + res.getCliente().getTelefone() +
                     "    " + res.getDataReserva() + "    " + res.getHorarioReserva() + 
-                    "    " + "Número de Pessoas:" + "    " + res.getNumeroPessoasReserva());
+                    "    " + "NÃºmero de Pessoas:" + "    " + res.getNumeroPessoasReserva());
         }
         menuReservas.setListaReservasCadastradas(listaReservas);
     }

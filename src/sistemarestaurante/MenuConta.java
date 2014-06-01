@@ -96,34 +96,34 @@ public class MenuConta extends javax.swing.JFrame {
         contaPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 0), 2));
         contaPanel.setForeground(new java.awt.Color(51, 153, 0));
 
-        contaLabel.setFont(new java.awt.Font("Tahoma", 1, 18));
+        contaLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         contaLabel.setForeground(new java.awt.Color(255, 255, 255));
         contaLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         contaLabel.setText("Conta do Cliente");
 
-        produtosConsumidosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 153, 0), 1, true), "Produtos Consumidos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(51, 153, 0))); // NOI18N
+        produtosConsumidosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 153, 0), 1, true), "Produtos Consumidos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(51, 153, 0))); // NOI18N
         produtosConsumidosPanel.setOpaque(false);
 
         tabelaDePrecosTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Espeto Corrido", new Integer(0)},
-                {"Italiana", new Integer(0)},
-                {"Buffet", new Integer(0)},
-                {"Marmitex", new Integer(0)},
-                {"Sopa (mesa)", new Integer(0)},
-                {"Cerveja Garrafa", new Integer(0)},
-                {"½ Cerveja ", new Integer(0)},
-                {"Cerveja Lata 350ml", new Integer(0)},
-                {"Refrigerante Garrafa 290ml", new Integer(0)},
-                {"Refrigerante Lata 350ml", new Integer(0)},
-                {"Refrigerante 600ml", new Integer(0)},
-                {"Refrigerante Litro", new Integer(0)},
-                {"Refrigerante 2 Litros", new Integer(0)},
-                {"Água", new Integer(0)},
-                {"Suco", new Integer(0)},
-                {"Aperitivo", new Integer(0)},
-                {"Vinho (taça)", new Integer(0)},
-                {"Vinho (jarra)", new Integer(0)}
+                {"Espeto Corrido",  new Integer(0)},
+                {"Italiana",  new Integer(0)},
+                {"Buffet",  new Integer(0)},
+                {"Marmitex",  new Integer(0)},
+                {"Sopa (mesa)",  new Integer(0)},
+                {"Cerveja Garrafa",  new Integer(0)},
+                {"Â½ Cerveja ",  new Integer(0)},
+                {"Cerveja Lata 350ml",  new Integer(0)},
+                {"Refrigerante Garrafa 290ml",  new Integer(0)},
+                {"Refrigerante Lata 350ml",  new Integer(0)},
+                {"Refrigerante 600ml",  new Integer(0)},
+                {"Refrigerante Litro",  new Integer(0)},
+                {"Refrigerante 2 Litros",  new Integer(0)},
+                {"Ãgua",  new Integer(0)},
+                {"Suco",  new Integer(0)},
+                {"Aperitivo",  new Integer(0)},
+                {"Vinho (taÃ§a)",  new Integer(0)},
+                {"Vinho (jarra)",  new Integer(0)}
             },
             new String [] {
                 "Nome do Produto", "Quantidade"
@@ -151,8 +151,10 @@ public class MenuConta extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tabelaDePrecosTable);
-        tabelaDePrecosTable.getColumnModel().getColumn(0).setResizable(false);
-        tabelaDePrecosTable.getColumnModel().getColumn(1).setResizable(false);
+        if (tabelaDePrecosTable.getColumnModel().getColumnCount() > 0) {
+            tabelaDePrecosTable.getColumnModel().getColumn(0).setResizable(false);
+            tabelaDePrecosTable.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         valorTotalLabel.setForeground(new java.awt.Color(255, 255, 255));
         valorTotalLabel.setText("Valor Total da Compra (R$) :");
@@ -174,7 +176,7 @@ public class MenuConta extends javax.swing.JFrame {
             }
         });
 
-        adicionarButton.setText("Adicionar Item à Lista");
+        adicionarButton.setText("Adicionar Item Ã  Lista");
         adicionarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adicionarButtonActionPerformed(evt);
@@ -187,7 +189,7 @@ public class MenuConta extends javax.swing.JFrame {
 
         precoLabel.setForeground(new java.awt.Color(255, 255, 255));
         precoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        precoLabel.setText("Preço:");
+        precoLabel.setText("PreÃ§o:");
 
         quantidadeLabel.setForeground(new java.awt.Color(255, 255, 255));
         quantidadeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -208,19 +210,16 @@ public class MenuConta extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(outroProdutoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE))
                         .addComponent(listaScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
-                        .addGroup(produtosConsumidosPanelLayout.createSequentialGroup()
+                        .addComponent(adicionarButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, produtosConsumidosPanelLayout.createSequentialGroup()
+                            .addGap(8, 8, 8)
+                            .addComponent(precoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(produtosConsumidosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(adicionarButton)
-                                .addGroup(produtosConsumidosPanelLayout.createSequentialGroup()
-                                    .addGap(8, 8, 8)
-                                    .addComponent(precoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(precoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(quantidadeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(quantidadeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(precoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(quantidadeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(quantidadeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(produtosConsumidosPanelLayout.createSequentialGroup()
                         .addComponent(valorTotalLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -336,17 +335,17 @@ public class MenuConta extends javax.swing.JFrame {
     private void adicionarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarButtonActionPerformed
         // TODO add your handling code here:
         if (getNomeProduto().equals("")) {
-            JOptionPane.showMessageDialog(null, "Erro! Você não inseriu o nome ou tipo do produto!",
+            JOptionPane.showMessageDialog(null, "Erro! VocÃª nÃ£o inseriu o nome ou tipo do produto!",
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         } else if (getPreco() == 0) {
-            JOptionPane.showMessageDialog(null, "Erro! Você não inseriu o preço do produto!",
+            JOptionPane.showMessageDialog(null, "Erro! VocÃª nÃ£o inseriu o preÃ§o do produto!",
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         } else if (getQuantidade() == 0) {
-            JOptionPane.showMessageDialog(null, "Erro! Você não inseriu a quantidade do produto!",
+            JOptionPane.showMessageDialog(null, "Erro! VocÃª nÃ£o inseriu a quantidade do produto!",
                     "Erro!", JOptionPane.ERROR_MESSAGE);
         } else {
             String produto = (getNomeProduto() + "    " + "Quantidade:" + "    " +
-                    getQuantidade() + "    " + "Preço:" + "    " + getPreco());
+                    getQuantidade() + "    " + "PreÃ§o:" + "    " + getPreco());
             listaProdutos.addElement(produto);
             listaProdutosArrayList.add(produto);
             Collections.sort(listaProdutosArrayList);

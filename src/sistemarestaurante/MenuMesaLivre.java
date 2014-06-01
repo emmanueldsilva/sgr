@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author  Usuário
+ * @author  Usuï¿½rio
  */
 public class MenuMesaLivre extends javax.swing.JFrame {
 
@@ -53,13 +53,13 @@ public class MenuMesaLivre extends javax.swing.JFrame {
         menuMesaPanel.setBackground(new java.awt.Color(0, 51, 51));
         menuMesaPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 0), 2, true));
 
-        mesaLivreLabel.setFont(new java.awt.Font("Tahoma", 1, 14));
+        mesaLivreLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         mesaLivreLabel.setForeground(new java.awt.Color(0, 153, 51));
         mesaLivreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mesaLivreLabel.setText("A Mesa está Livre");
+        mesaLivreLabel.setText("A Mesa estÃ¡ Livre");
 
         numeroMesaLabel.setForeground(new java.awt.Color(255, 255, 255));
-        numeroMesaLabel.setText("Número da Mesa:");
+        numeroMesaLabel.setText("NÃºmero da Mesa:");
 
         numeroMesaTextField.setColumns(3);
         numeroMesaTextField.setEditable(false);
@@ -98,14 +98,14 @@ public class MenuMesaLivre extends javax.swing.JFrame {
             .addGroup(menuMesaPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(menuMesaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(reservarMesaButton, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                    .addComponent(reservarMesaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuMesaPanelLayout.createSequentialGroup()
                         .addComponent(numeroMesaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(numeroMesaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(tornarOcupadaButton, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                    .addComponent(tornarOcupadaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(okButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(mesaLivreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
+                    .addComponent(mesaLivreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         menuMesaPanelLayout.setVerticalGroup(

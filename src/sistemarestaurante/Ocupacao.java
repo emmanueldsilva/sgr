@@ -37,11 +37,6 @@ public class Ocupacao {
         //horarioOcupacao = calendario.g
     }
 
-
-    /**
-     * Método responsável por retornar o Horário de Ocupação da Mesa.
-     * @return horarioOcupacao
-     **/
     public String getHorarioOcupacao() {
         /*if (horarioOcupacao == null)
         {
@@ -52,66 +47,31 @@ public class Ocupacao {
         return this.horarioOcupacao;
     }
 
-
-    /**
-     * Método responsável por modificar o Horário de Ocupação da Mesa.
-     * @param horarioOcupacao
-     */
     public void setHorarioOcupacao(String horarioOcupacao) {
         this.horarioOcupacao = horarioOcupacao;
     }
 
-
-    /**
-     * Método responsável por retornar o Horário de Saída da Mesa.
-     * @return horarioSaida
-     */
     public String getHorarioSaida() {
         return horarioSaida;
     }
 
-
-    /**
-     * Método responsável por modificar o Horário de Saída da Mesa.
-     * @param horarioSaida
-     */
     public void setHorarioSaida(String horarioSaida) {
         this.horarioSaida = horarioSaida;
     }
 
-    
-    /**
-     * Método responsável por retornar o Número de Ocupantes da Mesa.
-     * @return numeroOcupantes
-     */
     public int getNumeroOcupantes() {
         return numeroOcupantes;
     }
 
-    
-    /**
-     * Método responsável por modificar o Número de Ocupantes da Mesa.
-     * @param numeroOcupantes
-     */
     public void setNumeroOcupantes(int numeroOcupantes) {
         this.numeroOcupantes = numeroOcupantes;
     }
 
-
-    /**
-     * Método responsável por adicionar uma mesa a ocupacao.
-     * @param novamesa
-     */
     public void addMesa(Mesa novamesa)
     {
         this.mesas.add(novamesa);
     }
 
-
-    /**
-     * Método responsável por retornar o conjunto de mesas da ocupação.
-     * @return mesas
-     */
     public ArrayList<Mesa> getMesas()
     {
         return mesas;

@@ -12,10 +12,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author  Usuário
- */
+
 public class MenuVendasAvulsas extends javax.swing.JFrame {
 
     private DefaultListModel listaProdutos;
@@ -89,12 +86,12 @@ public class MenuVendasAvulsas extends javax.swing.JFrame {
         tipoNomeProdutoLabel.setText("Tipo/Nome do Produto:");
 
         precoLabel.setForeground(new java.awt.Color(255, 255, 255));
-        precoLabel.setText("Preço:");
+        precoLabel.setText("Preï¿½o:");
 
         quantidadeLabel.setForeground(new java.awt.Color(255, 255, 255));
         quantidadeLabel.setText("Quantidade:");
 
-        adicionarButton.setText("Adicionar à Lista");
+        adicionarButton.setText("Adicionar ï¿½ Lista");
         adicionarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adicionarButtonActionPerformed(evt);
@@ -327,23 +324,23 @@ private void adicionarButtonActionPerformed(java.awt.event.ActionEvent evt) {//G
     // TODO add your handling code here:
     if (getNomeProduto().equals(""))
     {
-        JOptionPane.showMessageDialog(null, "Erro! Você não inseriu o nome ou tipo do produto!", 
+        JOptionPane.showMessageDialog(null, "Erro! VocÃª nÃ£o inseriu o nome ou tipo do produto!", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
     }
     else if (getPreco() == 0)
     {
-        JOptionPane.showMessageDialog(null, "Erro! Você não inseriu o preço do produto!", 
+        JOptionPane.showMessageDialog(null, "Erro! VocÃª nÃ£o inseriu o preÃ§o do produto!", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
     }
     else if (getQuantidade() == 0)
     {
-        JOptionPane.showMessageDialog(null, "Erro! Você não inseriu a quantidade do produto!", 
+        JOptionPane.showMessageDialog(null, "Erro! VocÃª nÃ£o inseriu a quantidade do produto!", 
                     "Erro!", JOptionPane.ERROR_MESSAGE);
     }
     else
     {
         String produto = (getNomeProduto() + "    " + "Qtde:" + "    " +
-                getQuantidade() + "    " + "Preço:" + "    " + getPreco());
+                getQuantidade() + "    " + "PreÃ§o:" + "    " + getPreco());
         listaProdutos.addElement(produto);
         listaProdutosArrayList.add(produto);
         Collections.sort(listaProdutosArrayList);
@@ -386,7 +383,7 @@ private void removerVendaButtonActionPerformed(java.awt.event.ActionEvent evt) {
     // TODO add your handling code here:
     if (!vendasSalvasJList.isSelectionEmpty())
     {
-        int option = JOptionPane.showConfirmDialog(null, "Aviso: Você está prestes a remover um registro de Venda!" +
+        int option = JOptionPane.showConfirmDialog(null, "Aviso: VocÃª estÃ¡ prestes a remover um registro de Venda!" +
                 " Deseja remover assim mesmo?", "Cuidado!", JOptionPane.YES_NO_OPTION, 
             JOptionPane.WARNING_MESSAGE);
         if (option == 0)

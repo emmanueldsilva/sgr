@@ -12,7 +12,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 /**
  *
- * @author  Usuário
+ * @author  Usuï¿½rio
  */
 public class MenuMesaOcupada extends javax.swing.JFrame {
 
@@ -101,20 +101,20 @@ public class MenuMesaOcupada extends javax.swing.JFrame {
         menuMesaOcupadaPanel.setBackground(new java.awt.Color(0, 51, 51));
         menuMesaOcupadaPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 0), 2, true));
 
-        mesaOcupadaLabel.setFont(new java.awt.Font("Tahoma", 1, 14));
+        mesaOcupadaLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         mesaOcupadaLabel.setForeground(new java.awt.Color(204, 0, 51));
         mesaOcupadaLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mesaOcupadaLabel.setText("A Mesa está Ocupada");
+        mesaOcupadaLabel.setText("A Mesa estÃ¡ Ocupada");
 
         numeroMesaLabel.setForeground(new java.awt.Color(255, 255, 255));
-        numeroMesaLabel.setText("Número da Mesa:");
+        numeroMesaLabel.setText("NÃºmero da Mesa:");
 
         numeroMesaTextField.setColumns(3);
         numeroMesaTextField.setEditable(false);
         numeroMesaTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         numeroOcupantesLabel.setForeground(new java.awt.Color(255, 255, 255));
-        numeroOcupantesLabel.setText("Número de Ocupantes:");
+        numeroOcupantesLabel.setText("NÃºmero de Ocupantes:");
 
         numeroOcupantesTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,14 +145,14 @@ public class MenuMesaOcupada extends javax.swing.JFrame {
         });
 
         horarioOcupacaoLabel.setForeground(new java.awt.Color(255, 255, 255));
-        horarioOcupacaoLabel.setText("Horário de Ocupação:");
+        horarioOcupacaoLabel.setText("HorÃ¡rio de OcupaÃ§Ã£o:");
 
         horarioOcupacaoFormattedTextField.setEditable(false);
         horarioOcupacaoFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
         horarioOcupacaoFormattedTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         horarioSaidaLabel.setForeground(new java.awt.Color(255, 255, 255));
-        horarioSaidaLabel.setText("Horário de Saída (hh:mm):");
+        horarioSaidaLabel.setText("HorÃ¡rio de SaÃ­da (hh:mm):");
 
         horarioSaidaFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
         horarioSaidaFormattedTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -161,7 +161,7 @@ public class MenuMesaOcupada extends javax.swing.JFrame {
         mesaOcupadaSeparator.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         vincularContaLabel.setForeground(new java.awt.Color(255, 255, 255));
-        vincularContaLabel.setText("Mesas a serem Vinculadas à Conta:");
+        vincularContaLabel.setText("Mesas a serem Vinculadas Ã  Conta:");
 
         mesasVinculadasComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50" }));
 
@@ -273,11 +273,11 @@ public class MenuMesaOcupada extends javax.swing.JFrame {
                                 .addGap(8, 8, 8)
                                 .addComponent(removerMesaVinculadaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(vincularMesasSelecionadasButton, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                                .addComponent(vincularMesasSelecionadasButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(34, 34, 34)
                                 .addComponent(okButton))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(mesaOcupadaSeparator, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))
+                    .addComponent(mesaOcupadaSeparator))
                 .addContainerGap())
         );
 
@@ -311,7 +311,7 @@ private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 private void tornarLivreButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tornarLivreButtonMouseClicked
 
     int resposta = JOptionPane.showConfirmDialog(null, "Aviso: Os dados inseridos na tela anterior " +
-            "não foram salvos! Deseja salvá-los agora mesmo?", "Cuidado!", JOptionPane.YES_NO_OPTION, 
+            "nÃ£o foram salvos! Deseja salvÃ¡-los agora mesmo?", "Cuidado!", JOptionPane.YES_NO_OPTION, 
             JOptionPane.WARNING_MESSAGE);
     if (resposta == 0)
     {
@@ -319,7 +319,7 @@ private void tornarLivreButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN
     }
     else
     {
-        //não
+        //nï¿½o
     }
     inter = InterfaceInternaCentral.getInstancia();
     inter.ocupadaParaLivre(controle);

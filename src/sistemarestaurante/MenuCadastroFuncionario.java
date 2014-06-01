@@ -83,19 +83,19 @@ public class MenuCadastroFuncionario extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("SGR - Menu de Cadastro de Funcion·rios");
+        setTitle("SGR - Menu de Cadastro de Funcion√°rios");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
 
         menuCadastroFuncionarioPanel.setBackground(new java.awt.Color(0, 51, 51));
         menuCadastroFuncionarioPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 0), 2, true));
 
-        cadastroFuncionarioLabel.setFont(new java.awt.Font("Tahoma", 1, 18));
+        cadastroFuncionarioLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         cadastroFuncionarioLabel.setForeground(new java.awt.Color(255, 255, 255));
         cadastroFuncionarioLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        cadastroFuncionarioLabel.setText("Cadastro de Funcion·rios");
+        cadastroFuncionarioLabel.setText("Cadastro de Funcion√°rios");
 
-        dadosFuncionarioPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 0), 1, true), "Dados do Funcion·rio", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 204, 0))); // NOI18N
+        dadosFuncionarioPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 0), 1, true), "Dados do Funcion√°rio", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 204, 0))); // NOI18N
         dadosFuncionarioPanel.setForeground(new java.awt.Color(51, 153, 0));
         dadosFuncionarioPanel.setOpaque(false);
 
@@ -135,7 +135,7 @@ public class MenuCadastroFuncionario extends javax.swing.JFrame {
         estadoCivilLabel.setText("Estado Civil:");
 
         enderecoLabel.setForeground(new java.awt.Color(255, 255, 255));
-        enderecoLabel.setText("EndereÁo:");
+        enderecoLabel.setText("Endere√ßo:");
 
         criarCadastroButton.setText("Criar Cadastro");
         criarCadastroButton.addActionListener(new java.awt.event.ActionListener() {
@@ -158,10 +158,10 @@ public class MenuCadastroFuncionario extends javax.swing.JFrame {
         cargoLabel.setForeground(new java.awt.Color(255, 255, 255));
         cargoLabel.setText("Cargo no Restaurante:");
 
-        cargoComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cozinheira(o)", "GarÁom/GarÁonete", "Gerente", "Faxineira(o)" }));
+        cargoComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cozinheira(o)", "Gar√ßom/Gar√ßonete", "Gerente", "Faxineira(o)" }));
 
         salarioLabel.setForeground(new java.awt.Color(255, 255, 255));
-        salarioLabel.setText("Sal·rio:");
+        salarioLabel.setText("Sal√°rio:");
 
         salarioFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
@@ -194,7 +194,7 @@ public class MenuCadastroFuncionario extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, dadosFuncionarioPanelLayout.createSequentialGroup()
                                 .addComponent(cpfFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(estadoCivilLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
+                                .addComponent(estadoCivilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(estadoCivilComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, dadosFuncionarioPanelLayout.createSequentialGroup()
@@ -236,7 +236,7 @@ public class MenuCadastroFuncionario extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        painelCadastrosEfetuadosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 0), 1, true), "Cadastros Efetuados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 204, 0))); // NOI18N
+        painelCadastrosEfetuadosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 0), 1, true), "Cadastros Efetuados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 204, 0))); // NOI18N
         painelCadastrosEfetuadosPanel.setOpaque(false);
 
         listaCadastrosList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
@@ -359,7 +359,7 @@ private void removerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN
     // TODO add your handling code here:
     if (!listaCadastrosList.isSelectionEmpty())
     {
-        int option = JOptionPane.showConfirmDialog(null, "Aviso: VocÍ est· prestes a remover um registro de Funcion·rio!" +
+        int option = JOptionPane.showConfirmDialog(null, "Aviso: Voc√™ est√° prestes a remover um registro de Funcion√°rio!" +
                 "Deseja remover assim mesmo?", "Cuidado!", JOptionPane.YES_NO_OPTION, 
             JOptionPane.WARNING_MESSAGE);
         if (option == 0)

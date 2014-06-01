@@ -5,10 +5,6 @@
 
 package sistemarestaurante;
 
-/**
- *
- * @author Usuário
- */
 public class Funcionario {
 
     private String nome;

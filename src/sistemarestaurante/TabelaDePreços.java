@@ -1,5 +1,5 @@
 /*
- * TabelaDePre�os.java
+ * TabelaDePreços.java
  *
  * Created on 15 de Setembro de 2008, 23:29
  */
@@ -8,11 +8,11 @@ package sistemarestaurante;
 
 /**
  *
- * @author  Usu�rio
+ * @author  Usuário
  */
 public class TabelaDePreços extends javax.swing.JFrame {
 
-    /** Creates new form TabelaDePre�os */
+    /** Creates new form TabelaDePreços */
     public TabelaDePreços() {
         initComponents();
     }
