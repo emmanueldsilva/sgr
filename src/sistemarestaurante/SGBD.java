@@ -18,6 +18,7 @@ import java.util.ArrayList;
  */
 public class SGBD {
     private static ObjectContainer bd_clientes = null;
+    private static ObjectContainer bd_produtos = null;
     private static ObjectContainer bd_usuarios = null;
     private static ObjectContainer bd_reservas = null;
     private static ObjectContainer bd_funcionarios = null;
@@ -29,6 +30,7 @@ public class SGBD {
     private SGBD()
     {
         bd_clientes = Db4o.openFile("BaseDeDados_Clientes");
+        bd_produtos = Db4o.openFile("BaseDeDados_Produtos");
         bd_usuarios = Db4o.openFile("BaseDeDados_Usuarios");
         bd_reservas = Db4o.openFile("BaseDeDados_Reservas");
         bd_funcionarios = Db4o.openFile("BaseDeDados_Funcionarios");
@@ -57,19 +59,18 @@ public class SGBD {
         }
     }
     
-    public void armazenaUsuario(Usuario usuario)
-    {
-        try
-        {
-            if (buscaUsuarios(usuario).isEmpty()) {
-                bd_usuarios.store(usuario);
-                bd_usuarios.commit();
-            } 
+    public void armazenaProduto(Produto produto) {
+        if (buscaProdutos(produto).isEmpty()) {
+            bd_produtos.store(produto);
+            bd_produtos.commit();
         }
-        catch (Exception e)
-        {
-            new Exception("erro ao armazenar usuario no banco de dados");
-        }
+    }
+    
+    public void armazenaUsuario(Usuario usuario) {
+        if (buscaUsuarios(usuario).isEmpty()) {
+            bd_usuarios.store(usuario);
+            bd_usuarios.commit();
+        } 
     }
     
     public void armazenaReserva(Reserva reserva)
@@ -171,22 +172,16 @@ public class SGBD {
         }
     }
     
-    public ArrayList<Usuario> buscaUsuarios(Usuario usuario)
-    {
-        Usuario usuarioProt = usuario;
-        try
-        {
-            ArrayList<Usuario> array = new ArrayList<Usuario>();
-            ObjectSet<Usuario> lista = bd_usuarios.queryByExample(usuarioProt);
-            for(Usuario u: lista)
-                array.add(u);
-            return array;
-        }
-        catch (Exception e)
-        {
-            new Exception("erro ao fazer a consulta no banco de dados");
-            return null;
-        }
+    public ArrayList<Produto> buscaProdutos(Produto produto) {
+        return new ArrayList(bd_produtos.queryByExample(produto));
+    }
+    
+    public ArrayList<Produto> buscaTodosProdutos() {
+        return new ArrayList(bd_produtos.queryByExample(Produto.class));
+    }
+    
+    public ArrayList<Usuario> buscaUsuarios(Usuario usuario) {
+        return new ArrayList(bd_usuarios.queryByExample(usuario));
     }
 
     public ArrayList<Reserva> buscaReserva(Reserva reserva)
@@ -360,6 +355,13 @@ public class SGBD {
         catch (Exception e)
         {
             new Exception("erro ao remover um cadastro de cliente no banco de dados");
+        }
+    }
+    
+    public void removeProduto(Produto produto) {
+        for (Produto produtoBase : buscaProdutos(produto)) {
+            bd_produtos.delete(produtoBase);
+            bd_produtos.commit();
         }
     }
     

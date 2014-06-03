@@ -30,14 +30,6 @@ public class Usuario {
             return this;
         }
 
-        private String getLogin() {
-            return login;
-        }
-
-        private String getSenha() {
-            return senha;
-        }
-        
         public Usuario build() {
             return new Usuario(this);
         }
@@ -45,8 +37,8 @@ public class Usuario {
     }
     
     private Usuario(UsuarioBuilder usuarioBuilder) {
-        login = usuarioBuilder.getLogin();
-        senha = usuarioBuilder.getSenha();
+        login = usuarioBuilder.login;
+        senha = usuarioBuilder.senha;
     }
 
     public String getLogin() {

@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class ControleUsuario {
 
-    Usuario buscaUsuario(String login, String senha) {
+    public Usuario buscaUsuario(String login, String senha) {
        final Usuario usuario = new Usuario.UsuarioBuilder()
                 .setLogin(login)
                 .setSenha(senha)

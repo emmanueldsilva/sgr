@@ -68,16 +68,6 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="salaoPanel" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="consultaContasCadastradasButton" pref="190" max="32767" attributes="0"/>
-                                      <Component id="tabelaPrecosButton" alignment="0" pref="190" max="32767" attributes="1"/>
-                                      <Component id="cadastroReservasButton" alignment="0" pref="190" max="32767" attributes="1"/>
-                                      <Component id="vendasAvulsasButton" alignment="0" pref="190" max="32767" attributes="1"/>
-                                      <Component id="cadastroFuncionariosButton" alignment="1" pref="190" max="32767" attributes="1"/>
-                                  </Group>
-                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -86,6 +76,17 @@
                                           <Component id="logadoLabel" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="cadastroProdutosButton" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="consultaContasCadastradasButton" alignment="1" pref="190" max="32767" attributes="0"/>
+                                      <Component id="tabelaPrecosButton" alignment="0" pref="190" max="32767" attributes="1"/>
+                                      <Component id="cadastroReservasButton" alignment="0" pref="190" max="32767" attributes="1"/>
+                                      <Component id="vendasAvulsasButton" alignment="0" pref="190" max="32767" attributes="1"/>
+                                      <Component id="cadastroFuncionariosButton" alignment="1" pref="190" max="32767" attributes="1"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -112,6 +113,8 @@
                           <Component id="tabelaPrecosButton" min="-2" pref="62" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="consultaContasCadastradasButton" min="-2" pref="64" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="cadastroProdutosButton" min="-2" pref="64" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="logadoLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -267,6 +270,7 @@
         <Component class="javax.swing.JButton" name="tabelaPrecosButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tabela de Pre&#xe7;os"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tabelaPrecosButtonActionPerformed"/>
@@ -305,6 +309,14 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="cadastroProdutosButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cadastro de Produtos"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastroProdutosButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
