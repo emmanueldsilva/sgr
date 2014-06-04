@@ -13,16 +13,16 @@ import javax.swing.JOptionPane;
  *
  * @author edamiani
  */
-public class ControleContas {
+public class ControleVendas {
 
     private SGBD sgbd;
     private MenuConta menuConta;
     private MenuConsultaConta menuConsultaConta;
     private ControleTabelaDePrecos controleTabelaDePrecos;
-    private Conta conta;
+    private Venda conta;
     private TabelaDePrecos tabela;
 
-    public ControleContas(MenuConta menuConta)
+    public ControleVendas(MenuConta menuConta)
     {
         this.sgbd = SGBD.getInstancia();
         this.menuConta = menuConta;
@@ -30,7 +30,7 @@ public class ControleContas {
         this.tabela = controleTabelaDePrecos.getTabelaDePrecos();
     }
     
-    public ControleContas(MenuConsultaConta menuConsultaConta)
+    public ControleVendas(MenuConsultaConta menuConsultaConta)
     {
         this.sgbd = SGBD.getInstancia();
         this.menuConsultaConta = menuConsultaConta;
@@ -88,24 +88,9 @@ public class ControleContas {
         }
         else
         {
-            conta = new Conta(menuConta.getOcupacao().getHorarioOcupacao(),
+            conta = new Venda(menuConta.getOcupacao().getHorarioOcupacao(),
                     menuConta.getOcupacao().getHorarioSaida(), null,
                     menuConta.getOcupacao().getNumeroOcupantes());
-            for (int i=0; i< menuConta.getTable().getRowCount(); i++)
-            {
-                if (!menuConta.getTable().getValueAt(i, 1).toString().equals("0"))
-                {
-                    conta.addString("Produto:" + "    " + menuConta.getTable().getValueAt(i, 0).toString() +
-                            "    " + "Quantidade:" + menuConta.getTable().getValueAt(i, 1) +
-                            "    " + "Preço:" + "    " + tabela.getPrecoProduto(i));
-                }
-
-            }
-            for (String s: listaProdutos)
-            {
-                conta.addString("Produto:"+ "    " + s);
-            }
-            conta.addString("Valor total gasto:" + "    " + menuConta.getValorTotal());
         }
         sgbd.armazenaConta(conta);
     }
@@ -113,9 +98,9 @@ public class ControleContas {
     public void consultaTodasContas()
     {
         String contaString = null;
-        ArrayList<Conta> array = sgbd.buscaTodasContas();
+        ArrayList<Venda> array = sgbd.buscaTodasContas();
         DefaultListModel listaContas = new DefaultListModel();
-        for (Conta c: array)
+        for (Venda c: array)
         {
             contaString = ("Data:" + "    " + c.getData() + "    " + "Horário Ocupação:" +
                     "    " + c.getHorarioOcupacao() + "    " + "Horário de Saída:" + "    " 
@@ -133,10 +118,10 @@ public class ControleContas {
         System.out.println(data);
         String horario = vetor[3];
         System.out.println(horario);
-        ArrayList<Conta> array = sgbd.buscaContas(new Conta(horario, null, data, 0));
+        ArrayList<Venda> array = sgbd.buscaContas(new Venda(horario, null, data, 0));
         //ArrayList<Conta> array = sgbd.buscaContas(new Conta(null, null, null, 0));
         System.out.println(array.size());
-        for (Conta c: array)
+        for (Venda c: array)
         {
             //System.out.println("entrou aki");
             menuConsultaConta.getProdutosDaContaTextArea().setText(c.toString());
@@ -150,7 +135,7 @@ public class ControleContas {
         String[] vetor = contaString.split("    ");
         String data = vetor[1];
         String horario = vetor[3];
-        sgbd.removeConta(new Conta(horario, null, data, 0));
+        sgbd.removeConta(new Venda(horario, null, data, 0));
         JOptionPane.showMessageDialog(null, "Registro de Conta removido com sucesso!", 
         "Confirmado", JOptionPane.INFORMATION_MESSAGE);
     }

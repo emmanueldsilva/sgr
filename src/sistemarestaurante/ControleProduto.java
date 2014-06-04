@@ -2,6 +2,7 @@ package sistemarestaurante;
 
 import java.util.ArrayList;
 import java.util.Vector;
+import static sistemarestaurante.Produto.parseProduto;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,11 +17,11 @@ import java.util.Vector;
 public class ControleProduto {
     
     public void armazenaProduto(Vector<String> produtoVector) {
-        SGBD.getInstancia().armazenaProduto(Produto.fromVector(produtoVector));
+        SGBD.getInstancia().armazenaProduto(parseProduto(produtoVector));
     }
     
     public Vector<String> buscaProduto(Vector<String> produtoVector) {
-        ArrayList<Produto> produtos = SGBD.getInstancia().buscaProdutos(Produto.fromVector(produtoVector));
+        ArrayList<Produto> produtos = SGBD.getInstancia().buscaProdutos(parseProduto(produtoVector));
         
         if (produtos.size() == 1) {
            return produtos.get(0).toVector();
@@ -35,7 +36,7 @@ public class ControleProduto {
     public Vector<Vector<String>> buscaTodosProdutos() {
         final Vector<Vector<String>> produtosVector = new Vector<Vector<String>>();
         
-        for (Produto produto : SGBD.getInstancia().buscaTodosProdutos()) {
+        for (Produto produto : SGBD.getInstancia().buscaProdutosComercializados()) {
             produtosVector.add(produto.toVector());
         }
         
@@ -48,7 +49,7 @@ public class ControleProduto {
     }
     
     public void removeProduto(Vector<String> produtoVector) {
-        SGBD.getInstancia().removeProduto(Produto.fromVector(produtoVector));
+        SGBD.getInstancia().descomercializaProduto(parseProduto(produtoVector));
     }
 
 }

@@ -24,11 +24,11 @@ import javax.swing.ListModel;
 public class MenuConsultaConta extends javax.swing.JFrame {
 
     private static MenuConsultaConta menuConsulta = null;
-    private ControleContas controleContas;
+    private ControleVendas controleContas;
     /** Creates new form ConsultaConta */
     public MenuConsultaConta() {
         initComponents();
-        this.controleContas = new ControleContas(this);
+        this.controleContas = new ControleVendas(this);
         //centralizarInterface(this);
         getContas();
         

@@ -28,7 +28,7 @@ public class MenuConta extends javax.swing.JFrame {
 
     private DefaultListModel listaProdutos;
     private ArrayList<String> listaProdutosArrayList;
-    private ControleContas controleContas;
+    private ControleVendas controleContas;
     private Ocupacao ocupacao;
     private static MenuConta menuConta = null;
     /** Creates new form MenuConta */
@@ -37,7 +37,7 @@ public class MenuConta extends javax.swing.JFrame {
 
         this.centralizarInterface(this);
         this.listaProdutosArrayList = new ArrayList<String>();
-        this.controleContas = new ControleContas(this);
+        this.controleContas = new ControleVendas(this);
         this.listaProdutos = new DefaultListModel();
         this.ocupacao = ocupacao;
         controleContas.calculaValor(listaProdutosArrayList);

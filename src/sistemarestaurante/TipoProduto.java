@@ -11,5 +11,10 @@ package sistemarestaurante;
  * @author filaboia
  */
 public enum TipoProduto {
-    Refeição, Doce, Bebida
+    Refeição, Doce, Bebida;
+    
+    public static TipoProduto parseTipoProduto(String s) {
+        return (s != null) ? TipoProduto.valueOf(s) : null;
+    }
+            
 }

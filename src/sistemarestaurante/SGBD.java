@@ -8,6 +8,8 @@ package sistemarestaurante;
 import com.db4o.Db4o;
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
 import java.util.ArrayList;
 
 
@@ -141,7 +143,7 @@ public class SGBD {
         }
     }
     
-    public void armazenaConta(Conta conta)
+    public void armazenaConta(Venda conta)
     {
         try
         {
@@ -176,8 +178,12 @@ public class SGBD {
         return new ArrayList(bd_produtos.queryByExample(produto));
     }
     
-    public ArrayList<Produto> buscaTodosProdutos() {
-        return new ArrayList(bd_produtos.queryByExample(Produto.class));
+    public ArrayList<Produto> buscaProdutosComercializados() {
+        final Produto produtoComercializado = new Produto.ProdutoBuilder()
+                .setComercializado(TRUE)
+                .build();
+        
+        return new ArrayList(bd_produtos.queryByExample(produtoComercializado));
     }
     
     public ArrayList<Usuario> buscaUsuarios(Usuario usuario) {
@@ -301,14 +307,14 @@ public class SGBD {
             }
     }
     
-    public ArrayList<Conta> buscaContas(Conta conta)
+    public ArrayList<Venda> buscaContas(Venda conta)
     {
         System.out.println(conta.getData() + " " + conta.getHorarioOcupacao());
         try
         {
-            ArrayList<Conta> array = new ArrayList<Conta>();
-            ObjectSet<Conta> lista = bd_contas.queryByExample(conta);
-            for (Conta c: lista)
+            ArrayList<Venda> array = new ArrayList<Venda>();
+            ObjectSet<Venda> lista = bd_contas.queryByExample(conta);
+            for (Venda c: lista)
             {
                 array.add(c);
             }
@@ -321,13 +327,13 @@ public class SGBD {
         }
     }
     
-    public ArrayList<Conta> buscaTodasContas()
+    public ArrayList<Venda> buscaTodasContas()
     {
         try
         {
-            ArrayList<Conta> array = new ArrayList<Conta>();
-            ObjectSet<Conta> lista = bd_contas.queryByExample(Conta.class);
-            for (Conta c: lista)
+            ArrayList<Venda> array = new ArrayList<Venda>();
+            ObjectSet<Venda> lista = bd_contas.queryByExample(Venda.class);
+            for (Venda c: lista)
             {
                 System.out.println(c.getData() + "    " + c.getHorarioOcupacao());
                 array.add(c);
@@ -355,13 +361,6 @@ public class SGBD {
         catch (Exception e)
         {
             new Exception("erro ao remover um cadastro de cliente no banco de dados");
-        }
-    }
-    
-    public void removeProduto(Produto produto) {
-        for (Produto produtoBase : buscaProdutos(produto)) {
-            bd_produtos.delete(produtoBase);
-            bd_produtos.commit();
         }
     }
     
@@ -416,12 +415,12 @@ public class SGBD {
         }
     }
 
-    public void removeConta(Conta conta)
+    public void removeConta(Venda conta)
     {
         try
         {
-            ArrayList<Conta> array = buscaContas(conta);
-            for (Conta c: array)
+            ArrayList<Venda> array = buscaContas(conta);
+            for (Venda c: array)
             {
                 bd_contas.delete(c);
                 bd_contas.commit();
@@ -457,6 +456,14 @@ public class SGBD {
         {
             new Exception("erro ao atualizar um cadastro de cliente no banco de dados");
         }    
+    }
+    
+    public void descomercializaProduto(Produto produto) {
+        for (Produto produtoBase : buscaProdutos(produto)) {
+            produtoBase.setComercializado(FALSE);
+            bd_produtos.store(produtoBase);
+            bd_produtos.commit();
+        }
     }
     
     public void atualizaReserva(Reserva res, String[] vetor)
@@ -511,4 +518,5 @@ public class SGBD {
             new Exception("erro ao atualizar um cadastro de funcionário no banco de dados");
         }   
     }
+
 }

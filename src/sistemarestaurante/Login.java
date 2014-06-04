@@ -6,9 +6,7 @@
 
 package sistemarestaurante;
 
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import sistemarestaurante.Usuario.UsuarioBuilder;
 
 /**
  *
@@ -41,6 +39,7 @@ public class Login extends javax.swing.JFrame {
         entrarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         tituloLabel.setText("Tela de Login");
 

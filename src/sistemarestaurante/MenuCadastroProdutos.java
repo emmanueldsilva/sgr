@@ -6,9 +6,9 @@
 
 package sistemarestaurante;
 
-import static java.lang.Boolean.TRUE;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
+import static sistemarestaurante.TipoProduto.parseTipoProduto;
 
 /**
  *
@@ -47,7 +47,6 @@ public class MenuCadastroProdutos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        comercializadoGroup = new javax.swing.ButtonGroup();
         cadastroProdutosLabel = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         descricaoLabel = new javax.swing.JLabel();
@@ -56,9 +55,6 @@ public class MenuCadastroProdutos extends javax.swing.JFrame {
         tipoComboBox = new javax.swing.JComboBox();
         jPanel4 = new javax.swing.JPanel();
         precoLabel = new javax.swing.JLabel();
-        comercializadoLabel = new javax.swing.JLabel();
-        comercializadoNaoRadio = new javax.swing.JRadioButton();
-        comercializadoSimRadio = new javax.swing.JRadioButton();
         precoText = new javax.swing.JFormattedTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         produtosTable = new javax.swing.JTable();
@@ -68,6 +64,7 @@ public class MenuCadastroProdutos extends javax.swing.JFrame {
         removerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         cadastroProdutosLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cadastroProdutosLabel.setText("Cadastro de Produtos");
@@ -109,31 +106,15 @@ public class MenuCadastroProdutos extends javax.swing.JFrame {
 
         precoLabel.setText("Preço");
 
-        comercializadoLabel.setText("Comercializado");
-
-        comercializadoGroup.add(comercializadoNaoRadio);
-        comercializadoNaoRadio.setText("Não");
-
-        comercializadoGroup.add(comercializadoSimRadio);
-        comercializadoSimRadio.setSelected(true);
-        comercializadoSimRadio.setText("Sim");
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(comercializadoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(precoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(precoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(comercializadoSimRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(comercializadoNaoRadio, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))
-                    .addComponent(precoText))
+                .addComponent(precoText, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -143,11 +124,6 @@ public class MenuCadastroProdutos extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(precoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(precoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comercializadoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comercializadoNaoRadio)
-                    .addComponent(comercializadoSimRadio))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -156,14 +132,14 @@ public class MenuCadastroProdutos extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Descrição", "Tipo", "Preço", "Comercializado"
+                "Descrição", "Tipo", "Preço"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -198,7 +174,6 @@ public class MenuCadastroProdutos extends javax.swing.JFrame {
         });
 
         removerButton.setText("Remover");
-        removerButton.setEnabled(false);
         removerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removerButtonActionPerformed(evt);
@@ -265,15 +240,12 @@ public class MenuCadastroProdutos extends javax.swing.JFrame {
         produtoVector.add(descricaoText.getText());
         produtoVector.add(tipoComboBox.getSelectedItem().toString());
         produtoVector.add(precoText.getText());
-        produtoVector.add(comercializadoSimRadio.isSelected() ? "Sim" : "Não");
         
-        controleProduto.removeProduto(produtoVectorEmEdicao);
-        controleProduto.armazenaProduto(produtoVector);
+        controleProduto.editaProduto(produtoVectorEmEdicao, produtoVector);
         produtosTableModel.removeRow(produtoIndexEmEdicao);
         produtosTableModel.addRow(produtoVector);
         
         limpar();
-        produtoIndexEmEdicao = null;
     }//GEN-LAST:event_salvarButtonActionPerformed
 
     private void editarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarButtonActionPerformed
@@ -282,13 +254,8 @@ public class MenuCadastroProdutos extends javax.swing.JFrame {
         final Vector<String> produtoVector = produtosVector.get(produtoIndex);
         
         descricaoText.setText(produtoVector.get(0));
-        tipoComboBox.setSelectedItem(TipoProduto.valueOf(produtoVector.get(1)));
+        tipoComboBox.setSelectedItem(parseTipoProduto(produtoVector.get(1)));
         precoText.setText(produtoVector.get(2));
-        if ("Sim".equals(produtoVector.get(2))) {
-            comercializadoSimRadio.setSelected(TRUE);
-        } else {
-            comercializadoNaoRadio.setSelected(TRUE);
-        }
         
         produtoIndexEmEdicao = produtoIndex;
     }//GEN-LAST:event_editarButtonActionPerformed
@@ -300,27 +267,20 @@ public class MenuCadastroProdutos extends javax.swing.JFrame {
     private void limpar() {
         descricaoText.setText("");
         precoText.setText("");
+        produtoIndexEmEdicao = null;
     }
 
     private void removerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerButtonActionPerformed
-        remover();
-    }//GEN-LAST:event_removerButtonActionPerformed
-
-    private void remover() {
         final Integer produtoIndex = produtosTable.convertRowIndexToModel(produtosTable.getSelectedRow());
         final Vector<Vector<String>> produtosVector = ((DefaultTableModel) produtosTable.getModel()).getDataVector();
         final Vector<String> produtoVector = produtosVector.get(produtoIndex);
         
         new ControleProduto().removeProduto(produtoVector);
         ((DefaultTableModel) produtosTable.getModel()).removeRow(produtoIndex);
-    }
+    }//GEN-LAST:event_removerButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cadastroProdutosLabel;
-    private javax.swing.ButtonGroup comercializadoGroup;
-    private javax.swing.JLabel comercializadoLabel;
-    private javax.swing.JRadioButton comercializadoNaoRadio;
-    private javax.swing.JRadioButton comercializadoSimRadio;
     private javax.swing.JLabel descricaoLabel;
     private javax.swing.JTextField descricaoText;
     private javax.swing.JButton editarButton;

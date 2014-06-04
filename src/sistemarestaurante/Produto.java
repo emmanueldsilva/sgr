@@ -6,9 +6,10 @@
 
 package sistemarestaurante;
 
-import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
+import static java.lang.Double.parseDouble;
 import java.util.Vector;
+import static sistemarestaurante.TipoProduto.parseTipoProduto;
 
 /**
  *
@@ -19,7 +20,7 @@ public class Produto {
     private final String descricao;
     private final TipoProduto tipo;
     private final Double preco;
-    private final Boolean comercializado;
+    private Boolean comercializado;
     
     public static class ProdutoBuilder {
        
@@ -67,17 +68,16 @@ public class Produto {
         produtoVector.add(getDescricao());
         produtoVector.add(getTipo().toString());
         produtoVector.add(getPreco().toString());
-        produtoVector.add(isComercializado() ? "Sim" : "Não");
         
         return produtoVector;
     }
     
-    public static Produto fromVector(Vector<String> produtoVector) {
+    public static Produto parseProduto(Vector<String> produtoVector) {
         return new ProdutoBuilder()
                .setDescricao(produtoVector.get(0))
-               .setTipo(TipoProduto.valueOf(produtoVector.get(1)))
-               .setPreco(Double.valueOf(produtoVector.get(2)))
-               .setComercializado("Sim".equals(produtoVector.get(3)) ? TRUE : FALSE)
+               .setTipo(parseTipoProduto(produtoVector.get(1)))
+               .setPreco(parseDouble(produtoVector.get(2)))
+               .setComercializado(TRUE)
                .build();
     }
 
@@ -95,6 +95,10 @@ public class Produto {
 
     public Boolean isComercializado() {
         return comercializado;
+    }
+
+    public void setComercializado(Boolean comercializado) {
+        this.comercializado = comercializado;
     }
     
 }

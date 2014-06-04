@@ -13,9 +13,9 @@ import java.util.Date;
  *
  * @author edamiani
  */
-public class Conta {
+public class Venda {
 
-    private ArrayList<String> produtosConsumidos;
+    private ArrayList<Produto> produtosConsumidos;
     private String horarioOcupacao;
     private String horarioSaida;
     private String data;
@@ -23,38 +23,23 @@ public class Conta {
     private Date date;
     private SimpleDateFormat sdf;
 
-    public Conta(String horarioOcupacao,
+    public Venda(String horarioOcupacao,
             String horarioSaida, String data, int numOcupantes)
     {
-        this.produtosConsumidos = new ArrayList<String>();
         this.data = data;
         this.horarioOcupacao = horarioOcupacao;
         this.horarioSaida = horarioSaida;
         this.date = new Date();
         this.sdf = new SimpleDateFormat("dd/MM/yyyy");
         this.data = sdf.format(date);
-        this.produtosConsumidos.add("Data:"+ "    " + this.data + "    " + "Horário Ocupação:"
-                + "    " + this.horarioOcupacao + "    " + "Horário Fechamento:" + "    "
-                + this.horarioSaida + "    " + "Nº Pessoas:" + "    " + this.numOcupantes);
     }
 
-    public ArrayList<String> getProdutosConsumidos() {
+    public ArrayList<Produto> getProdutosConsumidos() {
         return produtosConsumidos;
     }
 
-    public void setProdutosConsumidos(ArrayList<String> produtosConsumidos) {
+    public void setProdutosConsumidos(ArrayList<Produto> produtosConsumidos) {
         this.produtosConsumidos = produtosConsumidos;
-    }
-
-    @Override
-    public String toString()
-    {
-        String tudo = null;
-        for (String s: produtosConsumidos)
-        {
-            tudo += (s + "\n");
-        }
-        return tudo;
     }
 
     public String getData() {
@@ -71,11 +56,6 @@ public class Conta {
 
     public void setHorario(String horario) {
         this.horarioOcupacao = horario;
-    }
-
-    public void addString(String novoString)
-    {
-        produtosConsumidos.add(novoString);
     }
 
     public String getHorarioSaida() {

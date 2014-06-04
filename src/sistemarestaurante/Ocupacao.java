@@ -21,7 +21,7 @@ public class Ocupacao {
     private SimpleDateFormat sdf;
     private String horarioOcupacao;
     private String horarioSaida;
-    private Conta conta;
+    private Venda conta;
     private ArrayList<Mesa> mesas;
 
     public Ocupacao(ArrayList<Mesa> mesas)
