@@ -19,14 +19,14 @@ import java.util.ArrayList;
  * @author edamiani
  */
 public class SGBD {
-    private static ObjectContainer bd_clientes = null;
-    private static ObjectContainer bd_produtos = null;
-    private static ObjectContainer bd_usuarios = null;
-    private static ObjectContainer bd_reservas = null;
-    private static ObjectContainer bd_funcionarios = null;
-    private static ObjectContainer bd_vendasavulsas = null;
-    private static ObjectContainer bd_tabela_precos = null;
-    private static ObjectContainer bd_contas = null;
+    private final ObjectContainer bd_clientes;
+    private final ObjectContainer bd_produtos;
+    private final ObjectContainer bd_usuarios;
+    private final ObjectContainer bd_reservas;
+    private final ObjectContainer bd_funcionarios;
+    private final ObjectContainer bd_vendas;
+    private final ObjectContainer bd_vendasavulsas;
+    private final ObjectContainer bd_tabela_precos;
     private static SGBD banco;
 
     private SGBD()
@@ -36,9 +36,9 @@ public class SGBD {
         bd_usuarios = Db4o.openFile("BaseDeDados_Usuarios");
         bd_reservas = Db4o.openFile("BaseDeDados_Reservas");
         bd_funcionarios = Db4o.openFile("BaseDeDados_Funcionarios");
+        bd_vendas = Db4o.openFile("BaseDeDados_Vendas");
         bd_vendasavulsas = Db4o.openFile("BaseDeDados_VendasAvulsas");
         bd_tabela_precos = Db4o.openFile("BaseDeDados_TabelaDePrecos");
-        bd_contas = Db4o.openFile("BaseDeDados_Contas");
     }
 
     public static SGBD getInstancia()
@@ -143,19 +143,13 @@ public class SGBD {
         }
     }
     
-    public void armazenaConta(Venda conta)
-    {
-        try
-        {
-            bd_contas.store(conta);
-            bd_contas.commit();
-        }
-        catch (Exception e)
-        {
-            new Exception("erro ao armazenar conta no banco de dados");
-        }
+    void armazenaVenda(Venda venda) {
+        if (buscaVendas(venda).isEmpty()) {
+            bd_vendas.store(venda);
+            bd_vendas.commit();
+        } 
     }
-    
+
     public ArrayList<Cliente> buscaClientes(Cliente cli)
     {
         Cliente clienteProt = cli;
@@ -307,46 +301,14 @@ public class SGBD {
             }
     }
     
-    public ArrayList<Venda> buscaContas(Venda conta)
-    {
-        System.out.println(conta.getData() + " " + conta.getHorarioOcupacao());
-        try
-        {
-            ArrayList<Venda> array = new ArrayList<Venda>();
-            ObjectSet<Venda> lista = bd_contas.queryByExample(conta);
-            for (Venda c: lista)
-            {
-                array.add(c);
-            }
-            return array;
-        }
-        catch (Exception e)
-        {
-            new Exception("erro ao fazer a consulta no banco de dados");
-            return null;
-        }
+    public ArrayList<Venda> buscaVendas() {
+        return new ArrayList(bd_vendas.queryByExample(Venda.class));
     }
     
-    public ArrayList<Venda> buscaTodasContas()
-    {
-        try
-        {
-            ArrayList<Venda> array = new ArrayList<Venda>();
-            ObjectSet<Venda> lista = bd_contas.queryByExample(Venda.class);
-            for (Venda c: lista)
-            {
-                System.out.println(c.getData() + "    " + c.getHorarioOcupacao());
-                array.add(c);
-            }
-            return array;
-        }
-        catch (Exception e)
-        {
-            new Exception("erro ao fazer a consulta no banco de dados");
-            return null;
-        }
+    public ArrayList<Venda> buscaVendas(Venda venda) {
+        return new ArrayList(bd_vendas.queryByExample(venda));
     }
-
+    
     public void removeCliente(Cliente cli)
     {
         try
@@ -415,23 +377,6 @@ public class SGBD {
         }
     }
 
-    public void removeConta(Venda conta)
-    {
-        try
-        {
-            ArrayList<Venda> array = buscaContas(conta);
-            for (Venda c: array)
-            {
-                bd_contas.delete(c);
-                bd_contas.commit();
-            }
-        }
-        catch (Exception e)
-        {
-            new Exception("erro ao remover um cadastro de funcionário no banco de dados");
-        }
-    }
-    
     public void atualizaCliente(Cliente cli, String[] vetor)
     {
         try 

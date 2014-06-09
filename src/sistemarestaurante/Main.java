@@ -9,9 +9,6 @@
 
 package sistemarestaurante;
 
-import java.util.Arrays;
-import sun.reflect.ReflectionFactory;
-
 /**
  *
  * @author edamiani
@@ -33,7 +30,7 @@ public class Main {
             frameCentral.setVisible(true);
             frameCentral.instanciaMesas();*/
             
-            Login login = new Login();
+            MenuLogin login = new MenuLogin();
             login.setVisible(true);
                 
 //                FrameCentral programa;

@@ -82,10 +82,8 @@
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="cadastroProdutosButton" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="consultaContasCadastradasButton" alignment="1" pref="190" max="32767" attributes="0"/>
-                                      <Component id="tabelaPrecosButton" alignment="0" pref="190" max="32767" attributes="1"/>
+                                      <Component id="consultaVendasButton" alignment="1" pref="190" max="32767" attributes="0"/>
                                       <Component id="cadastroReservasButton" alignment="0" pref="190" max="32767" attributes="1"/>
-                                      <Component id="vendasAvulsasButton" alignment="0" pref="190" max="32767" attributes="1"/>
                                       <Component id="cadastroFuncionariosButton" alignment="1" pref="190" max="32767" attributes="1"/>
                                   </Group>
                               </Group>
@@ -108,11 +106,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="cadastroReservasButton" min="-2" pref="62" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="vendasAvulsasButton" min="-2" pref="62" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="tabelaPrecosButton" min="-2" pref="62" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="consultaContasCadastradasButton" min="-2" pref="64" max="-2" attributes="0"/>
+                          <Component id="consultaVendasButton" min="-2" pref="64" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="cadastroProdutosButton" min="-2" pref="64" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
@@ -259,23 +253,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastroReservasButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="vendasAvulsasButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Menu de Vendas Avulsas"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="vendasAvulsasButtonActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="tabelaPrecosButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tabela de Pre&#xe7;os"/>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tabelaPrecosButtonActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="posicaoInicialButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Posi&#xe7;&#xe3;o Inicial das Mesas"/>
@@ -284,12 +261,12 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="posicaoInicialButtonMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="consultaContasCadastradasButton">
+        <Component class="javax.swing.JButton" name="consultaVendasButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Consulta Contas Cadastradas"/>
+            <Property name="text" type="java.lang.String" value="Consulta de Vendas"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultaContasCadastradasButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultaVendasButtonActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="logadoLabel">

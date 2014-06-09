@@ -3,7 +3,7 @@
 <Form version="1.5" maxVersion="1.6" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
-    <Property name="title" type="java.lang.String" value="SGR - Conta Cliente"/>
+    <Property name="title" type="java.lang.String" value="SGR - Detalhes Venda"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -97,7 +97,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Conta do Cliente"/>
+            <Property name="text" type="java.lang.String" value="Detalhes Venda"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JPanel" name="produtosConsumidosPanel">
@@ -120,36 +120,16 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="351" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="outroProdutoLabel" min="-2" pref="85" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="outroProdutoTextField" pref="228" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="listaScrollPane" alignment="0" pref="317" max="32767" attributes="1"/>
-                              <Component id="adicionarButton" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                  <Component id="precoLabel" min="-2" pref="78" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="precoTextField" min="-2" pref="85" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="quantidadeLabel" pref="99" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="quantidadeTextField" min="-2" pref="35" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
+                          <Component id="jScrollPane1" pref="702" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="valorTotalLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="valorTotalFormattedTextField" min="-2" pref="78" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="removerItemButton" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -158,33 +138,12 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" min="-2" pref="313" max="-2" attributes="0"/>
-                          <Group type="102" attributes="1">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="outroProdutoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="outroProdutoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="quantidadeTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="precoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="precoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="quantidadeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="adicionarButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="listaScrollPane" pref="155" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="removerItemButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="valorTotalFormattedTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="valorTotalLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" pref="277" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="valorTotalFormattedTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="valorTotalLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -199,54 +158,28 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tabelaDePrecosTable">
+                <Component class="javax.swing.JTable" name="produtosVendaTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="2" rowCount="18">
-                        <Column editable="false" title="Nome do Produto" type="java.lang.Object">
-                          <Data value="Espeto Corrido"/>
-                          <Data value="Italiana"/>
-                          <Data value="Buffet"/>
-                          <Data value="Marmitex"/>
-                          <Data value="Sopa (mesa)"/>
-                          <Data value="Cerveja Garrafa"/>
-                          <Data value="&#xbd; Cerveja "/>
-                          <Data value="Cerveja Lata 350ml"/>
-                          <Data value="Refrigerante Garrafa 290ml"/>
-                          <Data value="Refrigerante Lata 350ml"/>
-                          <Data value="Refrigerante 600ml"/>
-                          <Data value="Refrigerante Litro"/>
-                          <Data value="Refrigerante 2 Litros"/>
-                          <Data value="&#xc1;gua"/>
-                          <Data value="Suco"/>
-                          <Data value="Aperitivo"/>
-                          <Data value="Vinho (ta&#xe7;a)"/>
-                          <Data value="Vinho (jarra)"/>
-                        </Column>
-                        <Column editable="true" title="Quantidade" type="java.lang.Integer">
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                          <Data value="0"/>
-                        </Column>
+                      <Table columnCount="4" rowCount="0">
+                        <Column editable="false" title="Nome do Produto" type="java.lang.String"/>
+                        <Column editable="false" title="Tipo" type="java.lang.String"/>
+                        <Column editable="false" title="Pre&#xe7;o (R$)" type="java.lang.Double"/>
+                        <Column editable="true" title="Quantidade" type="java.lang.Integer"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
                           <Editor/>
@@ -264,7 +197,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tabelaDePrecosTableMouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="produtosVendaTableMouseClicked"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -282,74 +215,6 @@
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="listaScrollPane">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JList" name="listaProdutosList">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="listaProdutosListValueChanged"/>
-                  </Events>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JButton" name="removerItemButton">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Remover Item"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removerItemButtonActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="adicionarButton">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Adicionar Item &#xe0; Lista"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adicionarButtonActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="precoTextField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="outroProdutoTextField">
-            </Component>
-            <Component class="javax.swing.JLabel" name="outroProdutoLabel">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="Outro Produto:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="precoLabel">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="Pre&#xe7;o:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="quantidadeLabel">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="Quantidade:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="quantidadeTextField">
             </Component>
           </SubComponents>
         </Container>

@@ -6,7 +6,7 @@
 
 package sistemarestaurante;
 
-import java.util.ArrayList;
+import static sistemarestaurante.FrameUtils.centralizarInterface;
 
 /**
  *
@@ -21,6 +21,7 @@ public class MenuMesaLivre extends javax.swing.JFrame {
     /** Creates new form MenuMesa */
     private MenuMesaLivre(int numControle, ControleMesa controle) {
         initComponents();
+        centralizarInterface(this);
         //inter = InterfaceInternaCentral.getInstancia();
         this.numControle = numControle;
         this.controle = controle;

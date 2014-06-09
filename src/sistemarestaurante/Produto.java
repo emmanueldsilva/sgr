@@ -7,7 +7,6 @@
 package sistemarestaurante;
 
 import static java.lang.Boolean.TRUE;
-import static java.lang.Double.parseDouble;
 import java.util.Vector;
 import static sistemarestaurante.TipoProduto.parseTipoProduto;
 
@@ -62,21 +61,21 @@ public class Produto {
         comercializado = produtoBuilder.comercializado;
     }
     
-    public Vector<String> toVector() {
-        final Vector<String> produtoVector = new Vector<String>();
+    public Vector toVector() {
+        final Vector produtoVector = new Vector<Object>();
            
         produtoVector.add(getDescricao());
         produtoVector.add(getTipo().toString());
-        produtoVector.add(getPreco().toString());
+        produtoVector.add(getPreco());
         
         return produtoVector;
     }
     
-    public static Produto parseProduto(Vector<String> produtoVector) {
+    public static Produto parseProduto(Vector<Object> produtoVector) {
         return new ProdutoBuilder()
-               .setDescricao(produtoVector.get(0))
-               .setTipo(parseTipoProduto(produtoVector.get(1)))
-               .setPreco(parseDouble(produtoVector.get(2)))
+               .setDescricao((String) produtoVector.get(0))
+               .setTipo(parseTipoProduto((String) produtoVector.get(1)))
+               .setPreco((Double) produtoVector.get(2))
                .setComercializado(TRUE)
                .build();
     }

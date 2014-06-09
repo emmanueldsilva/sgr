@@ -9,6 +9,7 @@ package sistemarestaurante;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Vector;
 
 /**
  *
@@ -21,7 +22,7 @@ public class Ocupacao {
     private SimpleDateFormat sdf;
     private String horarioOcupacao;
     private String horarioSaida;
-    private Venda conta;
+    private Vector<Vector> produtosVendaVector;
     private ArrayList<Mesa> mesas;
 
     public Ocupacao(ArrayList<Mesa> mesas)
@@ -76,4 +77,34 @@ public class Ocupacao {
     {
         return mesas;
     }
+
+    public Date getDate() {
+        return date;
+    }
+    
+     public String getFormattedDate() {
+        return new SimpleDateFormat("dd/MM/yyyy").format(date);
+    }
+
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public SimpleDateFormat getSdf() {
+        return sdf;
+    }
+
+    public void setSdf(SimpleDateFormat sdf) {
+        this.sdf = sdf;
+    }
+
+    public Vector<Vector> getProdutosVendaVector() {
+        return produtosVendaVector;
+    }
+
+    public void setProdutosVendaVector(Vector<Vector> produtosVendaVector) {
+        this.produtosVendaVector = produtosVendaVector;
+    }
+    
 }

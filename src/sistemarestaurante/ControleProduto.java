@@ -16,16 +16,21 @@ import static sistemarestaurante.Produto.parseProduto;
  */
 public class ControleProduto {
     
-    public void armazenaProduto(Vector<String> produtoVector) {
-        SGBD.getInstancia().armazenaProduto(parseProduto(produtoVector));
+    private final SGBD sgbd;
+    
+    public ControleProduto() {
+        sgbd = SGBD.getInstancia();
     }
     
-    public Vector<String> buscaProduto(Vector<String> produtoVector) {
-        ArrayList<Produto> produtos = SGBD.getInstancia().buscaProdutos(parseProduto(produtoVector));
+    public void armazenaProduto(Vector<Object> produtoVector) {
+        sgbd.armazenaProduto(parseProduto(produtoVector));
+    }
+    
+    public Vector<Object> buscaProduto(Vector<Object> produtoVector) {
+        ArrayList<Produto> produtos = sgbd.buscaProdutos(parseProduto(produtoVector));
         
         if (produtos.size() == 1) {
            return produtos.get(0).toVector();
-           
         } else if (produtos.isEmpty()) {
             throw new RuntimeException("Produto não encontrado.");
         } else {
@@ -33,23 +38,18 @@ public class ControleProduto {
         }
     }
     
-    public Vector<Vector<String>> buscaTodosProdutos() {
-        final Vector<Vector<String>> produtosVector = new Vector<Vector<String>>();
+    public Vector<Vector<Object>> buscaTodosProdutos() {
+        final Vector<Vector<Object>> produtosVector = new Vector<Vector<Object>>();
         
-        for (Produto produto : SGBD.getInstancia().buscaProdutosComercializados()) {
+        for (Produto produto : sgbd.buscaProdutosComercializados()) {
             produtosVector.add(produto.toVector());
         }
         
         return produtosVector;
     }
     
-    public void editaProduto(Vector<String> produtoVectorOld, Vector<String> produtoVector) {
-        removeProduto(produtoVectorOld);
-        armazenaProduto(produtoVector);
-    }
-    
-    public void removeProduto(Vector<String> produtoVector) {
-        SGBD.getInstancia().descomercializaProduto(parseProduto(produtoVector));
+    public void removeProduto(Vector<Object> produtoVector) {
+        sgbd.descomercializaProduto(parseProduto(produtoVector));
     }
 
 }

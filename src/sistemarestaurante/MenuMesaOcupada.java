@@ -8,8 +8,7 @@ package sistemarestaurante;
 
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
-import javax.swing.JList;
-import javax.swing.JOptionPane;
+import static sistemarestaurante.FrameUtils.centralizarInterface;
 /**
  *
  * @author  Usu�rio
@@ -23,45 +22,24 @@ public class MenuMesaOcupada extends javax.swing.JFrame {
     private InterfaceInternaCentral inter;
     private static MenuMesaOcupada instancia = null;
     private Ocupacao ocupacao;
-    private MenuConta menuConta;
+    private MenuVenda menuConta;
     
     /** Creates new form MenuMesaOcupada */
     private MenuMesaOcupada(int numControle, ControleMesa controleMesa, 
             Ocupacao ocupacao) 
     {
         initComponents();
-        MenuMesaOcupada.centralizarInterface(this);
+        centralizarInterface(this);
         this.mesasVinculadas = new ArrayList<Mesa>();
         this.numeroMesasVinculadas = new DefaultListModel();
         this.numControle = numControle;
         this.controle = controleMesa;
         this.ocupacao = ocupacao;
-        numeroMesasVinculadas.addElement(mesasVinculadasComboBox.getItemAt(numControle - 1));
-        mesasVinculadasComboBox.removeItem(mesasVinculadasComboBox.getItemAt(numControle - 1));
-        
-        mesasVinculadasList.setModel(numeroMesasVinculadas);
     }
 
-    public static void centralizarInterface(javax.swing.JFrame janela) {  
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        int componentWidth = janela.getWidth();
-        int componentHeight = janela.getHeight();
-        janela.setBounds((screenSize.width-componentWidth)/2, (screenSize.height-componentHeight)/2, componentWidth, componentHeight);
-    }
-    
     public DefaultListModel getNumeroMesasVinculadas() {
         return numeroMesasVinculadas;
     }
-
-    public void setMesasVinculadasList(JList mesasVinculadasList) {
-        this.mesasVinculadasList = mesasVinculadasList;
-    }
-
-    public JList getMesasVinculadasList() {
-        return mesasVinculadasList;
-    }
-
-
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -85,14 +63,6 @@ public class MenuMesaOcupada extends javax.swing.JFrame {
         horarioOcupacaoFormattedTextField = new javax.swing.JFormattedTextField();
         horarioSaidaLabel = new javax.swing.JLabel();
         horarioSaidaFormattedTextField = new javax.swing.JFormattedTextField();
-        mesaOcupadaSeparator = new javax.swing.JSeparator();
-        vincularContaLabel = new javax.swing.JLabel();
-        mesasVinculadasComboBox = new javax.swing.JComboBox();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        mesasVinculadasList = new javax.swing.JList();
-        adicionarMesaVinculadaButton = new javax.swing.JButton();
-        removerMesaVinculadaButton = new javax.swing.JButton();
-        vincularMesasSelecionadasButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Mesa Ocupada");
@@ -109,8 +79,8 @@ public class MenuMesaOcupada extends javax.swing.JFrame {
         numeroMesaLabel.setForeground(new java.awt.Color(255, 255, 255));
         numeroMesaLabel.setText("Número da Mesa:");
 
-        numeroMesaTextField.setColumns(3);
         numeroMesaTextField.setEditable(false);
+        numeroMesaTextField.setColumns(3);
         numeroMesaTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         numeroOcupantesLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -123,9 +93,9 @@ public class MenuMesaOcupada extends javax.swing.JFrame {
         });
 
         tornarLivreButton.setText("Tornar Livre");
-        tornarLivreButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tornarLivreButtonMouseClicked(evt);
+        tornarLivreButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tornarLivreButtonActionPerformed(evt);
             }
         });
 
@@ -157,135 +127,70 @@ public class MenuMesaOcupada extends javax.swing.JFrame {
         horarioSaidaFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
         horarioSaidaFormattedTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        mesaOcupadaSeparator.setForeground(new java.awt.Color(0, 153, 0));
-        mesaOcupadaSeparator.setOrientation(javax.swing.SwingConstants.VERTICAL);
-
-        vincularContaLabel.setForeground(new java.awt.Color(255, 255, 255));
-        vincularContaLabel.setText("Mesas a serem Vinculadas à Conta:");
-
-        mesasVinculadasComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50" }));
-
-        jScrollPane2.setViewportView(mesasVinculadasList);
-
-        adicionarMesaVinculadaButton.setText("Adicionar Mesa");
-        adicionarMesaVinculadaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adicionarMesaVinculadaButtonActionPerformed(evt);
-            }
-        });
-
-        removerMesaVinculadaButton.setText("Remover Mesa");
-        removerMesaVinculadaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removerMesaVinculadaButtonActionPerformed(evt);
-            }
-        });
-
-        vincularMesasSelecionadasButton.setText("Vincular Mesas Selecionadas");
-        vincularMesasSelecionadasButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vincularMesasSelecionadasButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout menuMesaOcupadaPanelLayout = new javax.swing.GroupLayout(menuMesaOcupadaPanel);
         menuMesaOcupadaPanel.setLayout(menuMesaOcupadaPanelLayout);
         menuMesaOcupadaPanelLayout.setHorizontalGroup(
             menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuMesaOcupadaPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuMesaOcupadaPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mesaOcupadaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
+                .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(menuMesaOcupadaPanelLayout.createSequentialGroup()
-                        .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(menuMesaOcupadaPanelLayout.createSequentialGroup()
-                                .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(horarioSaidaLabel)
-                                    .addComponent(numeroMesaLabel)
-                                    .addComponent(numeroOcupantesLabel)
-                                    .addComponent(horarioOcupacaoLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(horarioOcupacaoFormattedTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                                    .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(numeroOcupantesTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(numeroMesaTextField, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(horarioSaidaFormattedTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE))
-                                .addGap(10, 10, 10))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuMesaOcupadaPanelLayout.createSequentialGroup()
-                                .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(acessarContaButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                                    .addComponent(tornarLivreButton, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addComponent(mesaOcupadaSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(okButton))
+                    .addComponent(acessarContaButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tornarLivreButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mesaOcupadaLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(menuMesaOcupadaPanelLayout.createSequentialGroup()
                         .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(horarioSaidaLabel)
+                            .addComponent(numeroMesaLabel)
+                            .addComponent(numeroOcupantesLabel)
+                            .addComponent(horarioOcupacaoLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(horarioOcupacaoFormattedTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(horarioSaidaFormattedTextField)
                             .addGroup(menuMesaOcupadaPanelLayout.createSequentialGroup()
-                                .addComponent(vincularContaLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(mesasVinculadasComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(menuMesaOcupadaPanelLayout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(adicionarMesaVinculadaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(removerMesaVinculadaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(vincularMesasSelecionadasButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(okButton))))
-                .addContainerGap())
+                                .addComponent(numeroMesaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(numeroOcupantesTextField, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addGap(282, 282, 282))
         );
         menuMesaOcupadaPanelLayout.setVerticalGroup(
             menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuMesaOcupadaPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(mesaOcupadaLabel)
+                .addGap(19, 19, 19)
+                .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(numeroMesaLabel)
+                    .addComponent(numeroMesaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(menuMesaOcupadaPanelLayout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(numeroMesaLabel)
-                            .addComponent(numeroMesaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(numeroOcupantesLabel)
-                            .addComponent(numeroOcupantesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(horarioOcupacaoFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(horarioOcupacaoLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(horarioSaidaLabel)
-                            .addComponent(horarioSaidaFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tornarLivreButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(acessarContaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuMesaOcupadaPanelLayout.createSequentialGroup()
-                        .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(mesasVinculadasComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(vincularContaLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(menuMesaOcupadaPanelLayout.createSequentialGroup()
-                                .addComponent(adicionarMesaVinculadaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(removerMesaVinculadaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(vincularMesasSelecionadasButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(34, 34, 34)
-                                .addComponent(okButton))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(mesaOcupadaSeparator))
-                .addContainerGap())
+                .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(numeroOcupantesLabel)
+                    .addComponent(numeroOcupantesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(horarioOcupacaoFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(horarioOcupacaoLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(menuMesaOcupadaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(horarioSaidaLabel)
+                    .addComponent(horarioSaidaFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tornarLivreButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(acessarContaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(okButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menuMesaOcupadaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(menuMesaOcupadaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 318, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,78 +213,20 @@ private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     this.dispose();
 }//GEN-LAST:event_okButtonActionPerformed
 
-private void tornarLivreButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tornarLivreButtonMouseClicked
-
-    int resposta = JOptionPane.showConfirmDialog(null, "Aviso: Os dados inseridos na tela anterior " +
-            "não foram salvos! Deseja salvá-los agora mesmo?", "Cuidado!", JOptionPane.YES_NO_OPTION, 
-            JOptionPane.WARNING_MESSAGE);
-    if (resposta == 0)
-    {
-        //sim
-    }
-    else
-    {
-        //n�o
-    }
-    inter = InterfaceInternaCentral.getInstancia();
-    inter.ocupadaParaLivre(controle);
-    dispose();
-
-}//GEN-LAST:event_tornarLivreButtonMouseClicked
-
-private void adicionarMesaVinculadaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarMesaVinculadaButtonActionPerformed
-    // TODO add your handling code here:
-    numeroMesasVinculadas.addElement(mesasVinculadasComboBox.getSelectedItem());
-    mesasVinculadasComboBox.removeItem(mesasVinculadasComboBox.getSelectedItem());
-    mesasVinculadasList.setModel(numeroMesasVinculadas);
-}//GEN-LAST:event_adicionarMesaVinculadaButtonActionPerformed
-
-private void removerMesaVinculadaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerMesaVinculadaButtonActionPerformed
-
-    if (!mesasVinculadasList.isSelectionEmpty())
-    {
-        mesasVinculadasComboBox.addItem(mesasVinculadasList.getSelectedValue());
-        numeroMesasVinculadas.remove(mesasVinculadasList.getSelectedIndex());
-        mesasVinculadasList.setModel(numeroMesasVinculadas);
-    }
-
-}//GEN-LAST:event_removerMesaVinculadaButtonActionPerformed
-
-private void vincularMesasSelecionadasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vincularMesasSelecionadasButtonActionPerformed
-// TODO add your handling code here:
-    if (mesasVinculadasList.getModel().getSize() != 0)
-    {
-                    //System.out.println("oi");
-        ArrayList<Object> listaAux = new ArrayList<Object>(mesasVinculadasList.getModel().getSize());
-        //System.out.println("tamanho lista: " + mesasVinculadasList.getModel().getSize());
-        
-        for (int i = 0; i < mesasVinculadasList.getModel().getSize(); i++)
-        {
-            //System.out.println("lol");
-            //System.out.println(mesasVinculadasList.getModel().getElementAt(i).toString() + "lol");
-            listaAux.add(mesasVinculadasList.getModel().getElementAt(i));
-        }
-            //System.out.println("adicionou: " + mesasVinculadasList.getModel().getElementAt(i));
-        for (Object obj: listaAux)
-        {
-            //System.out.println("oi");
-
-            ocupacao.addMesa(new Mesa(Integer.parseInt(obj.toString())));
-            inter = InterfaceInternaCentral.getInstancia();
-            
-        }
-        inter.vincularMesasOcupadas(ocupacao, numeroMesasVinculadas);
-    }
-}//GEN-LAST:event_vincularMesasSelecionadasButtonActionPerformed
-
 private void acessarContaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acessarContaButtonActionPerformed
     // TODO add your handling code here:
     ocupacao.setHorarioOcupacao(getHorarioOcupacao());
     ocupacao.setHorarioSaida(getHorarioSaida());
     ocupacao.setNumeroOcupantes(getNumOcupantes());
-    menuConta = MenuConta.getInstancia(this.ocupacao);
+    menuConta = new MenuVenda(this.ocupacao);
     menuConta.setVisible(true);
 }//GEN-LAST:event_acessarContaButtonActionPerformed
+
+    private void tornarLivreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tornarLivreButtonActionPerformed
+        inter = InterfaceInternaCentral.getInstancia();
+        inter.ocupadaParaLivre(controle);
+        dispose();
+    }//GEN-LAST:event_tornarLivreButtonActionPerformed
 
     /**
     * @param args the command line arguments
@@ -400,7 +247,6 @@ private void acessarContaButtonActionPerformed(java.awt.event.ActionEvent evt) {
             instancia.setControle(controleMesa);
             instancia.setNumControle(numControle);
             instancia.horarioOcupacaoFormattedTextField.setText(ocupacao.getHorarioOcupacao());
-            instancia.getMesasVinculadasList().setModel(lista);
         return instancia;
     }
     
@@ -442,26 +288,18 @@ private void acessarContaButtonActionPerformed(java.awt.event.ActionEvent evt) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton acessarContaButton;
-    private javax.swing.JButton adicionarMesaVinculadaButton;
     private javax.swing.JFormattedTextField horarioOcupacaoFormattedTextField;
     private javax.swing.JLabel horarioOcupacaoLabel;
     private javax.swing.JFormattedTextField horarioSaidaFormattedTextField;
     private javax.swing.JLabel horarioSaidaLabel;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel menuMesaOcupadaPanel;
     private javax.swing.JLabel mesaOcupadaLabel;
-    private javax.swing.JSeparator mesaOcupadaSeparator;
-    private javax.swing.JComboBox mesasVinculadasComboBox;
-    private javax.swing.JList mesasVinculadasList;
     private javax.swing.JLabel numeroMesaLabel;
     private javax.swing.JTextField numeroMesaTextField;
     private javax.swing.JLabel numeroOcupantesLabel;
     private javax.swing.JTextField numeroOcupantesTextField;
     private javax.swing.JButton okButton;
-    private javax.swing.JButton removerMesaVinculadaButton;
     private javax.swing.JButton tornarLivreButton;
-    private javax.swing.JLabel vincularContaLabel;
-    private javax.swing.JButton vincularMesasSelecionadasButton;
     // End of variables declaration//GEN-END:variables
 
 }

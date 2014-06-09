@@ -9,6 +9,7 @@ package sistemarestaurante;
 //import javax.swing.*;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import static sistemarestaurante.FrameUtils.centralizarInterface;
 
 
     /**
@@ -27,6 +28,7 @@ public class FrameCentral extends javax.swing.JFrame{
     private FrameCentral() {
         super("SGR - Sistema Gerenciador de Restaurante");
         initComponents();
+        centralizarInterface(this);
         /*this.comprimento = 40;
         this.largura = 40;/
         /*Thread thread = new Thread(this);
@@ -49,10 +51,8 @@ public class FrameCentral extends javax.swing.JFrame{
         mesaPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         cadastroReservasButton = new javax.swing.JButton();
-        vendasAvulsasButton = new javax.swing.JButton();
-        tabelaPrecosButton = new javax.swing.JButton();
         posicaoInicialButton = new javax.swing.JButton();
-        consultaContasCadastradasButton = new javax.swing.JButton();
+        consultaVendasButton = new javax.swing.JButton();
         logadoLabel = new javax.swing.JLabel();
         loginLabel = new javax.swing.JLabel();
         cadastroProdutosButton = new javax.swing.JButton();
@@ -138,21 +138,6 @@ public class FrameCentral extends javax.swing.JFrame{
             }
         });
 
-        vendasAvulsasButton.setText("Menu de Vendas Avulsas");
-        vendasAvulsasButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vendasAvulsasButtonActionPerformed(evt);
-            }
-        });
-
-        tabelaPrecosButton.setText("Tabela de Preços");
-        tabelaPrecosButton.setEnabled(false);
-        tabelaPrecosButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tabelaPrecosButtonActionPerformed(evt);
-            }
-        });
-
         posicaoInicialButton.setText("Posição Inicial das Mesas");
         posicaoInicialButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -160,10 +145,10 @@ public class FrameCentral extends javax.swing.JFrame{
             }
         });
 
-        consultaContasCadastradasButton.setText("Consulta Contas Cadastradas");
-        consultaContasCadastradasButton.addActionListener(new java.awt.event.ActionListener() {
+        consultaVendasButton.setText("Consulta de Vendas");
+        consultaVendasButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultaContasCadastradasButtonActionPerformed(evt);
+                consultaVendasButtonActionPerformed(evt);
             }
         });
 
@@ -203,10 +188,8 @@ public class FrameCentral extends javax.swing.JFrame{
                                 .addGap(10, 10, 10)
                                 .addGroup(painelCentralPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cadastroProdutosButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(consultaContasCadastradasButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, Short.MAX_VALUE)
-                                    .addComponent(tabelaPrecosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                                    .addComponent(consultaVendasButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
                                     .addComponent(cadastroReservasButton, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                                    .addComponent(vendasAvulsasButton, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
                                     .addComponent(cadastroFuncionariosButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))))))
                 .addContainerGap())
         );
@@ -222,11 +205,7 @@ public class FrameCentral extends javax.swing.JFrame{
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cadastroReservasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(vendasAvulsasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tabelaPrecosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(consultaContasCadastradasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(consultaVendasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cadastroProdutosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -269,18 +248,6 @@ private void cadastroReservasButtonActionPerformed(java.awt.event.ActionEvent ev
     cadastroReservas.setVisible(true);
 }//GEN-LAST:event_cadastroReservasButtonActionPerformed
 
-private void vendasAvulsasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vendasAvulsasButtonActionPerformed
-// TODO add your handling code here:
-    MenuVendasAvulsas menuVendas = new MenuVendasAvulsas();
-    menuVendas.setVisible(true);
-}//GEN-LAST:event_vendasAvulsasButtonActionPerformed
-
-private void tabelaPrecosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabelaPrecosButtonActionPerformed
-// TODO add your handling code here:
-    MenuTabelaDePrecos tabela = MenuTabelaDePrecos.getInstancia();
-    tabela.setVisible(true);
-}//GEN-LAST:event_tabelaPrecosButtonActionPerformed
-
 private void mesaPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mesaPanelMouseDragged
 // TODO add your handling code here:
     // TODO add your handling code here:
@@ -308,12 +275,10 @@ private void posicaoInicialButtonMouseClicked(java.awt.event.MouseEvent evt) {//
     }
 }//GEN-LAST:event_posicaoInicialButtonMouseClicked
 
-private void consultaContasCadastradasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaContasCadastradasButtonActionPerformed
-    // TODO add your handling code here:
-    MenuConsultaConta menuConsulta = MenuConsultaConta.getInstancia();
-    menuConsulta.getContas();
+private void consultaVendasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaVendasButtonActionPerformed
+    MenuConsultaVendas menuConsulta = new MenuConsultaVendas();
     menuConsulta.setVisible(true);
-}//GEN-LAST:event_consultaContasCadastradasButtonActionPerformed
+}//GEN-LAST:event_consultaVendasButtonActionPerformed
 
     private void cadastroProdutosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroProdutosButtonActionPerformed
         final MenuCadastroProdutos menuCadastroProdutos = MenuCadastroProdutos.getInstancia();
@@ -513,7 +478,7 @@ private void consultaContasCadastradasButtonActionPerformed(java.awt.event.Actio
     private javax.swing.JButton cadastroFuncionariosButton;
     private javax.swing.JButton cadastroProdutosButton;
     private javax.swing.JButton cadastroReservasButton;
-    private javax.swing.JButton consultaContasCadastradasButton;
+    private javax.swing.JButton consultaVendasButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel logadoLabel;
     private javax.swing.JLabel loginLabel;
@@ -523,8 +488,6 @@ private void consultaContasCadastradasButtonActionPerformed(java.awt.event.Actio
     private javax.swing.JLayeredPane salaoLayeredPane;
     private javax.swing.JPanel salaoPanel;
     private javax.swing.JLabel sgrLabel;
-    private javax.swing.JButton tabelaPrecosButton;
-    private javax.swing.JButton vendasAvulsasButton;
     // End of variables declaration//GEN-END:variables
     
 }
